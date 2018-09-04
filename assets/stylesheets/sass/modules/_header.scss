@@ -1,0 +1,208 @@
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 5vh 10%;
+
+    img {
+        width: 246px;
+    }
+    div {
+        margin-top: 4vh;
+        width: 50%;
+        text-align: right;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 1.0rem;
+            transition: all 0.15s ease-in-out;
+            
+            &:first-of-type:hover {
+                color: $color-primary;
+            }
+            &:nth-of-type(2n) {
+                margin-left: 5%;
+                padding: 0.5em 1em;
+                border-radius: 50px;
+                background-color: $color-primary;
+                color: white;
+
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+}
+
+#search-menu {
+    margin: 10vh 20%;  
+    position: relative;
+
+    #filter-toggle {
+        cursor: pointer;
+        color: $color-primary;
+        text-align: right;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin: 1% 1% 0% auto;
+        width: 25%;
+        transition: all 0.15s ease-in-out;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    form {
+        position: relative;
+
+        button {
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: $color-primary;
+            position: absolute;
+            top: 1.5vh;
+            right: -6%;
+            transition: all 0.15s ease-in-out;
+
+            &:hover {
+                // opacity: 0.7;
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    .search-menu-filters-main {
+        display: flex;
+        align-items: center;
+    }
+
+    .search-menu-filters-extra {
+        
+        .input-filters {
+            display: flex;
+            align-items: center;
+
+            .input-box:first-of-type {
+                width: 30%;
+            }
+
+            .input-box:nth-of-type(2n) {
+                width: 15.5%;
+
+                input {
+                    width: 65%;
+                }
+            }
+        }
+        
+        .benefits-filters {
+            margin: 2% 1%;
+
+            p {
+                padding-left: 2%;
+                color: $color-grey-main;
+                font-size: 0.9rem;
+                font-weight: 500;
+                letter-spacing: 0.5px;
+
+                span {
+                    margin-right: 10px; 
+                    color: $color-primary;
+                    font-size: 1rem;
+                }
+            }
+
+            hr {
+                color: $color-grey-borders;
+                border-bottom: 0.1px solid white;
+                opacity: 0.8;
+                margin: 1% 0%;
+            }
+
+            input[type=checkbox] {
+                display: none;
+            }
+
+            .columns {
+                margin: 0% 2%;
+                
+                .column {
+                    padding: 0;
+                }
+
+                li {
+                    list-style: none;
+                    margin: 10% 0%;
+                    font-size: 0.85rem;
+                    letter-spacing: 0.3px;
+                    
+                    &:hover > label {
+                        color: $color-primary;
+                    }
+                }
+
+                label {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .input-box {
+        margin: 1% 1%;
+        border: 1px solid $color-grey-borders;
+        padding: 0% 0% 0% 2%;
+        width: 50%;
+        height: 7vh;
+        min-height: 29px;
+        color: $color-primary;
+
+        input {
+            margin-left: 10px;
+            border: none;
+            height: 100%;
+            width: 80%;
+            background: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            font-family: inherit;
+            letter-spacing: 0.5px;
+            color: $color-grey-main;
+
+            &::placeholder {
+                margin-left: 20px;
+                font-family: inherit;
+                font-weight: 500;
+                font-size: 0.85rem;
+                color:$color-grey-main;
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+.expand {
+    box-sizing: border-box;
+    transition: all 0.5s ease-in-out;
+    max-height: 100em;
+    opacity: 1;
+}
+
+.collapsed {
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    max-height: 0px;
+    opacity: 0;
+}
+
+.checked {
+    color: $color-primary;
+    font-weight: 500;
+}

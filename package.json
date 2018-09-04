@@ -1,0 +1,29 @@
+{
+  "name": "rocket-jobs-pt",
+  "version": "1.0.0",
+  "description": "Rocket Jobs is my first full-stack side project since I completed the Web Developer Bootcamp. Objectively, it is a job board for young IT talents searching for a first job opportunity in Portugal.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiagomsmota/rocket-jobs-pt.git"
+  },
+  "author": "tiagomsmota",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiagomsmota/rocket-jobs-pt/issues"
+  },
+  "homepage": "https://github.com/tiagomsmota/rocket-jobs-pt#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "node-sass": "^4.9.3"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.3",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-node-sass": "^1.0.1"
+  }
+}

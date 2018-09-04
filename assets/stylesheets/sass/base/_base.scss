@@ -1,0 +1,19 @@
+/* header */ 
+$color-primary: #ff5050;
+$color-grey-bg: #f7f7f7;
+$color-grey-bg-border: #e1e1e1;
+$color-grey-borders: #9d9d9d;
+$color-grey-main: #4f4f4f;
+$main-font: "Montserrat";
+$logo-font: "Josefin Sans";
+
+body {
+    font-family: $main-font, sans-serif;
+    color: $color-grey-main;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.15s ease-in-out;
+}

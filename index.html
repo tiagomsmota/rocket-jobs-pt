@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Rocket Jobs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/stylesheets/css/style.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img id="logo" src="assets/imgs/logo.png" alt="Rocket Jobs logo">
+            <div>
+                <a href="#">Entrar</a>
+                <a href="#">Anunciar</a>
+            </div>
+        </nav>
+        <div id="search-menu">
+            <form>
+                <div class="search-menu-filters-main">
+                    <div class="input-box">
+                        <i class="fas fa-tshirt"></i>
+                        <input type="text" name="job-role" placeholder="Função">
+                    </div>
+                    <div class="input-box">
+                        <i class="fas fa-globe-africa"></i>
+                        <input type="text" name="location" placeholder="Localização">
+                    </div>
+                </div>
+                <div class="search-menu-filters-extra collapsed">
+                    <div class="input-filters">
+                        <div class="input-box">
+                            <i class="fas fa-home"></i>
+                            <input type="text" name="company" placeholder="Empresa">
+                        </div>
+                        <div class="input-box">
+                            <i class="fas fa-clock"></i>
+                            <input type="text" name="regimen" placeholder="Regime">
+                        </div>
+                        <div class="input-box">
+                            <i class="fas fa-wrench"></i>
+                            <input type="text" name="skills" placeholder="Competências">
+                        </div>
+                    </div>
+                    <div class="benefits-filters">
+                        <p><span><i class="fas fa-plus-circle"></i></span> Benefícios</p>   
+                        <hr>
+                        <div class="columns">
+                            <div class="column">
+                                <ul> 
+                                    <li class="benefit">
+                                        <label>Seguro de saúde</label>
+                                        <input type="checkbox" name="benefits" value="seguro-saude">
+                                    </li>
+                                    <li class="benefit">
+                                        <label>Seguro de vida</label>
+                                        <input type="checkbox" name="benefits" value="seguro-vida">
+                                    </li>
+                                    <li class="benefit">
+                                        <label>Ginásio</label>
+                                        <input type="checkbox" name="benefits" value="ginasio">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <ul>
+                                    <li class="benefit">
+                                        <label>Horário flexível</label>
+                                        <input type="checkbox" name="benefits" value="horario-flexivel">
+                                    </li>
+                                    <li class="benefit">
+                                        <label>Trabalho remoto</label>
+                                        <input type="checkbox" name="benefits" value="trabalho-remoto">
+                                    </li>
+                                    <li class="benefit">
+                                        <label>Opções de relocação</label>
+                                        <input type="checkbox" name="benefits" value="formacao">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <ul>
+                                    <li class="benefit">
+                                        <label>Café gratuito</label>
+                                        <input type="checkbox" name="benefits" value="cafe-gratuito">
+                                    </li>
+                                    <li class="benefit">
+                                        <label>Snacks gratuitos</label>
+                                        <input type="checkbox" name="benefits" value="snacks-gratuitos">
+                                    </li>
+                                    <li class="benefit">
+                                        <label>Animais permitidos</label>
+                                        <input type="checkbox" name="benefits" value="animais">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="column">
+                                <ul>
+                                    <li class="benefit">
+                                        <label>Team-building</label>
+                                        <input type="checkbox" name="benefits" value="team-building">
+                                    </li>    
+                                    <li class="benefit">
+                                        <label>Opções de formação</label>
+                                        <input type="checkbox" name="benefits" value="formacao">
+                                    </li>
+                                    <li class="benefit">
+                                        <label>Duches</label>
+                                        <input type="checkbox" name="benefits" value="duches">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button><i class="fas fa-search"></i></button>
+            </form>
+            <p id="filter-toggle">Vê mais filtros...</p>
+        </div>
+    </header>
+    <main>
+        <h1>Recentes</h1>
+        <div class="columns">
+            <div class="column is-two-thirds">
+                <ul>
+                    <li class="job-card">
+                        <div class="job-card-image">
+                            <img src="assets/imgs/empresa-logo.png" alt="Logo da empresa">
+                        </div>
+                        <div class="job-card-meta-top">
+                            <p>Porto, Portugal</p>
+                            <p>Há 2 dias</p>
+                        </div>
+                        <h2><a href="#">Front-end Developer</a></h2>
+                        <div class="job-card-meta-bottom">
+                            <div>
+                                <p><span><i class="fas fa-home"></i></span> <a href="#">Pixel Penguin</a></p>
+                                <span class="divider"><i class="fas fa-square-full"></i></span>
+                                <p>Full-time</p>
+                            </div>
+                            <ul>
+                                <li><span>#</span>React</li>
+                                <li><span>#</span>CSS</li>
+                                <li><span>#</span>Git</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="job-card">
+                        <div class="job-card-image">
+                            <img src="assets/imgs/empresa-logo2.png" alt="Logo da empresa">
+                        </div>
+                        <div class="job-card-meta-top">
+                            <p>Coimbra, Portugal</p>
+                            <p>Há 2 dias</p>
+                        </div>
+                        <h2><a href="#">Business Analyst</a></h2>
+                        <div class="job-card-meta-bottom">
+                            <div>
+                                <p><span><i class="fas fa-home"></i></span> <a href="#">Cobra Systems</a></p>
+                                <span class="divider"><i class="fas fa-square-full"></i></span>
+                                <p>Full-time</p>
+                            </div>
+                            <ul>
+                                <li><span>#</span>UML</li>
+                                <li><span>#</span>SQL</li>
+                                <li><span>#</span>Communication</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="job-card">
+                        <div class="job-card-image">
+                            <img src="assets/imgs/empresa-logo3.png" alt="Logo da empresa">
+                        </div>
+                        <div class="job-card-meta-top">
+                            <p>Lisboa, Portugal</p>
+                            <p>Há 3 dias</p>
+                        </div>
+                        <h2><a href="#">Estrategista Digital</a></h2>
+                        <div class="job-card-meta-bottom">
+                            <div>
+                                <p><span><i class="fas fa-home"></i></span> <a href="#">GoBOX</a></p>
+                                <span class="divider"><i class="fas fa-square-full"></i></span>
+                                <p>Full-time</p>
+                            </div>
+                            <ul>
+                                <li><span>#</span>SEO</li>
+                                <li><span>#</span>Content marketing</li>
+                                <li><span>#</span>Social media</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="job-card">
+                            <div class="job-card-image">
+                                <img src="assets/imgs/empresa-logo4.png" alt="Logo da empresa">
+                            </div>
+                            <div class="job-card-meta-top">
+                                <p>Porto, Portugal</p>
+                                <p>Há 3 dias</p>
+                            </div>
+                            <h2><a href="#">Junior Copywriter</a></h2>
+                            <div class="job-card-meta-bottom">
+                                <div>
+                                    <p><span><i class="fas fa-home"></i></span> <a href="#">Negócio Digital</a></p>
+                                    <span class="divider"><i class="fas fa-square-full"></i></span>
+                                    <p>Full-time</p>
+                                </div>
+                                <ul>
+                                    <li><span>#</span>Communication</li>
+                                    <li><span>#</span>Content marketing</li>
+                                    <li><span>#</span>Creative writing</li>
+                                </ul>
+                            </div>
+                        </li>
+                </ul>
+            </div>
+            <div class="column">
+                <aside>
+                    <section>
+                        <h1>Dispara a tua carreira</h1>
+                        <p>Queremos ajudar-te a encontrar a tua primeira oportunidade no mundo das TI e deixar-te em modo rocket.</p>
+                        <a href="#">Já tens uma conta? Faz login</a>
+                        <a href="#">Regista-te agora, é grátis</a>
+                    </section>
+                    <section>
+                        <img id="advertisement-image" src="assets/imgs/publicidade.jpg" alt="Imagem publicitária">
+                        <div id="advertisement-text">
+                            <h1>Canon Global</h1>
+                            <p>Leader in the fields of professional and consumer imaging equipment and information systems.</p>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <img id="footer-logo" src="assets/imgs/rocket.png" alt="Rocket Jobs logo">
+        <div class="footer-content">
+            <div class="footer-about">
+                <h1>Rocket Jobs</h1>
+                <p>Somos a primeira plataforma em Portugal dedicada à disseminação de oportunidades para jovens talentos no mundo das TI.</p>        
+            </div>
+            <div class="footer-sitemap columns">
+                <div class="column">
+                    <h2>Explora</h2>
+                    <ul>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <ul>
+                        <li><a href="#">Anunciar</a></li>
+                        <li><a href="#">Registar</a></li>
+                        <li><a href="#">Entrar</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h2>Legal</h2>
+                    <ul>
+                        <li><a href="#">Termos</a></li>
+                        <li><a href="#">Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-social">
+                <h2>Subscreve</h2>
+                <div class="subscription-form">
+                    <form>
+                        <input type="text" name="email-subscribe" placeholder="o teu email">
+                        <button>subscrever</button>
+                    </form>
+                </div>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                    <li><a href="#"><i class="fab fa-google-plus-square"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="assets/scripts/main.js"></script>
+</body>
+</html>
