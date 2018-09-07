@@ -1,0 +1,53 @@
+<% include ../partials/header %>
+    <main>
+        <h1>Recentes</h1>
+        <div class="columns">
+            <div class="column is-two-thirds">
+                <ul>
+                    <% jobs.forEach(function(job) { %>
+                        <li class="job-card">
+                            <div class="job-card-image">
+                                <img src="/imgs/rocket.png" alt="Logo da empresa">
+                            </div>
+                            <div class="job-card-meta-top">
+                                <p><%= job.location %></p>
+                                <p>Há <%= job.dateAdded %> dias</p>
+                            </div>
+                            <h2><a href="/jobs/<%= job._id %>"><%= job.title %></a></h2>
+                            <div class="job-card-meta-bottom">
+                                <div>
+                                    <p><span><i class="fas fa-home"></i></span> <a href="#"><%= job.company %></a></p>
+                                    <span class="divider"><i class="fas fa-square-full"></i></span>
+                                    <p><%= job.regimen %></p>
+                                </div>
+                                <ul>
+                                <% job.skills.forEach(function(skill) { %>
+                                    <li><span>#</span><%= skill %></li>
+                                <% }); %>
+                                </ul>
+                            </div>
+                        </li>
+                    <% }); %>
+                </ul>
+            </div>
+            <div class="column">
+                <aside>
+                    <section class="section-auth">
+                        <h1>Dispara a tua carreira</h1>
+                        <p>Queremos ajudar-te a encontrar a tua primeira oportunidade no mundo das TI e deixar-te em modo rocket.</p>
+                        <a href="#">Já tens uma conta? Faz login</a>
+                        <a href="#">Regista-te agora, é grátis</a>
+                    </section>
+                    <section class="section-advertisement">
+                        <img id="advertisement-image" src="/imgs/publicidade.jpg" alt="Imagem publicitária">
+                        <div id="advertisement-text">
+                            <h1>Canon Global</h1>
+                            <p>Leader in the fields of professional and consumer imaging equipment and information systems.</p>
+                        </div>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+<% include ../partials/footer %>
