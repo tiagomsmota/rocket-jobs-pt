@@ -56,6 +56,12 @@
             </div>
             <div class="column">
                 <aside>
+                    <div class="job-admin-control">
+                        <a href="/jobs/<%= job._id %>/edit">Editar</a>
+                        <form action="/jobs/<%= job._id %>?_method=DELETE" method="POST">
+                            <button>Eliminar</button>
+                        </form>
+                    </div>
                     <section class="section-apply">
                         <a href="#"><div>
                             <p>Candidata-te</p>

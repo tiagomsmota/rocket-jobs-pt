@@ -1,0 +1,101 @@
+<% include ../partials/header-alt %>
+
+<main>
+    <span id="filter-toggle"></span>
+    <h1 class="job-post-form-title">Editar <span style="font-weight: 500; color: #ff5050"><%= job.title %></span> @ <span style="font-weight: 500; color: #ff5050"><%= job.company %></span></h1>
+    <form action="/jobs/<%= job._id %>?_method=PUT" method="POST">
+        <div class="wrapper">
+            <div class="job-offer-post">
+                <div class="company">
+                    <div class="company-image">
+                        <img src="/imgs/rocket.png" alt="Logo da empresa">
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="job[company]" required value="<%= job.company %>">
+                        <label>Empresa</label>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="job[title]" required value="<%= job.title %>">
+                    <label>Título</label>
+                </div>
+                <div class="horizontal-input">
+                    <div class="input-box">
+                        <input type="text" name="job[location]" required value="<%= job.location %>">
+                        <label>Localização</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="job[regimen]" required value="<%= job.regimen %>">
+                        <label>Regime</label>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="job[skills]" required value="<%= job.skills %>">
+                    <label>Skills</label>
+                </div>
+                <div class="job-description">
+                    <p>Descrição</p>
+                    <%# <hr> %>
+                    <textarea name="job[description]"><%= job.description %></textarea>
+                </div> 
+                <div class="benefits-filters job-form-filters">
+                    <p>Benefícios</p>   
+                    <hr>
+                    <div class="columns">
+                        <div class="column">
+                            <ul> 
+                                <% var benefits = ["Seguro de saúde", "Seguro de vida", "Ginásio", "Horário flexível"]; %>
+                                <% benefits.forEach(function(benefit) { %>
+                                    <li class="benefit">
+                                    <% if(job.benefits.includes(benefit) === true) { %>
+                                    <label class="checked"><%= benefit %></label>
+                                    <input type="checkbox" name="job[benefits]" value="<%= benefit %>" checked="checked">
+                                    <% } else { %>
+                                    <label><%= benefit %></label>
+                                    <input type="checkbox" name="job[benefits]" value="<%= benefit %>">
+                                    <% } %>
+                                </li>
+                                <% }); %>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <ul>
+                                <% var benefits = ["Trabalho remoto", "Café gratuito", "Snacks gratuitos", "Animais permitidos"]; %>
+                                <% benefits.forEach(function(benefit) { %>
+                                    <li class="benefit">
+                                    <% if(job.benefits.includes(benefit) === true) { %>
+                                    <label class="checked"><%= benefit %></label>
+                                    <input type="checkbox" name="job[benefits]" value="<%= benefit %>" checked="checked">
+                                    <% } else { %>
+                                    <label><%= benefit %></label>
+                                    <input type="checkbox" name="job[benefits]" value="<%= benefit %>">
+                                    <% } %>
+                                </li>
+                                <% }); %>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <ul>
+                                <% var benefits = ["Opções de relocação", "Team-building", "Opções de formação", "Duches"]; %>
+                                <% benefits.forEach(function(benefit) { %>
+                                    <li class="benefit">
+                                    <% if(job.benefits.includes(benefit) === true) { %>
+                                    <label class="checked"><%= benefit %></label>
+                                    <input type="checkbox" name="job[benefits]" value="<%= benefit %>" checked="checked">
+                                    <% } else { %>
+                                    <label><%= benefit %></label>
+                                    <input type="checkbox" name="job[benefits]" value="<%= benefit %>">
+                                    <% } %>
+                                </li>
+                                <% }); %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="submit-job-form-btn">Anunciar</button>
+    </form>
+</main>
+
+<% include ../partials/footer %>

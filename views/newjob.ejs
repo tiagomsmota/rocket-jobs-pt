@@ -1,8 +1,112 @@
-<% include ../partials/header %>
+<% include ../partials/header-alt %>
 
-    <main>
-        <h1>Anunciar um novo trabalho</h1>
-
-    </main>
+<main>
+    <h1 class="job-post-form-title">Anunciar uma nova vaga</h1>
+    <form action="/jobs" method="POST">
+        <div class="wrapper">
+            <div class="job-offer-post">
+                <div class="company">
+                    <div class="company-image">
+                        <img src="/imgs/rocket.png" alt="Logo da empresa">
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="job[company]" required>
+                        <label>Empresa</label>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="job[title]" required>
+                    <label>Título</label>
+                </div>
+                <div class="horizontal-input">
+                    <div class="input-box">
+                        <input type="text" name="job[location]" required>
+                        <label>Localização</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="job[regimen]" required>
+                        <label>Regime</label>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" name="job[skills]" required>
+                    <label>Skills</label>
+                </div>
+                <div class="job-description">
+                    <p>Descrição</p>
+                    <%# <hr> %>
+                    <textarea name="job[description]"></textarea>
+                </div> 
+                <div class="benefits-filters job-form-filters">
+                    <p>Benefícios</p>   
+                    <hr>
+                    <div class="columns">
+                        <div class="column">
+                            <ul> 
+                                <li class="benefit">
+                                    <label>Seguro de saúde</label>
+                                    <input type="checkbox" name="job[benefits]" value="Seguro de saúde">
+                                </li>
+                                <li class="benefit">
+                                    <label>Seguro de vida</label>
+                                    <input type="checkbox" name="job[benefits]" value="Seguro de vida">
+                                </li>
+                                <li class="benefit">
+                                    <label>Ginásio</label>
+                                    <input type="checkbox" name="job[benefits]" value="Ginásio">
+                                </li>
+                                <li class="benefit">
+                                    <label>Horário flexível</label>
+                                    <input type="checkbox" name="job[benefits]" value="Horário flexível">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <ul>
+                                <li class="benefit">
+                                    <label>Trabalho remoto</label>
+                                    <input type="checkbox" name="job[benefits]" value="Trabalho remoto">
+                                </li>
+                                <li class="benefit">
+                                    <label>Café gratuito</label>
+                                    <input type="checkbox" name="job[benefits]" value="Café gratuito">
+                                </li>
+                                <li class="benefit">
+                                    <label>Snacks gratuitos</label>
+                                    <input type="checkbox" name="job[benefits]" value="Snacks gratuitos">
+                                </li>
+                                <li class="benefit">
+                                    <label>Animais permitidos</label>
+                                    <input type="checkbox" name="job[benefits]" value="Animais">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <ul>
+                                <li class="benefit">
+                                    <label>Opções de relocação</label>
+                                    <input type="checkbox" name="job[benefits]" value="Opções de relocação">
+                                </li>
+                                <li class="benefit">
+                                    <label>Team-building</label>
+                                    <input type="checkbox" name="job[benefits]" value="Team building">
+                                </li>    
+                                <li class="benefit">
+                                    <label>Opções de formação</label>
+                                    <input type="checkbox" name="job[benefits]" value="Opções de formação">
+                                </li>
+                                <li class="benefit">
+                                    <label>Duches</label>
+                                    <input type="checkbox" name="job[benefits]" value="Duches">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="submit-job-form-btn">Anunciar</button>
+    </form>
+</main>
 
 <% include ../partials/footer %>

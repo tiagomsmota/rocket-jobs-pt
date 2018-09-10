@@ -1113,6 +1113,93 @@ nav {
   color: #ff5050;
   font-weight: 500; }
 
+footer {
+  position: relative;
+  background-color: #ff5050;
+  height: 50vh;
+  color: black; }
+  footer a:hover {
+    color: #f7f7f7; }
+  footer #footer-logo {
+    position: absolute;
+    left: -9.5%;
+    max-height: 100%; }
+  footer .footer-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0% 5% 0% 10%;
+    height: 100%; }
+    footer .footer-content .footer-about {
+      max-width: 25%; }
+      footer .footer-content .footer-about h1 {
+        font-family: "Josefin Sans", monospace;
+        font-size: 2rem;
+        color: #f7f7f7; }
+      footer .footer-content .footer-about p {
+        font-size: 0.9rem;
+        line-height: 1.3rem; }
+    footer .footer-content .footer-sitemap {
+      margin: 0%; }
+      footer .footer-content .footer-sitemap div:nth-of-type(2n) {
+        margin-top: 1.2rem; }
+      footer .footer-content .footer-sitemap h2 {
+        color: #f7f7f7;
+        font-size: 1.2rem;
+        font-weight: 500; }
+      footer .footer-content .footer-sitemap li {
+        margin: 0.8rem 0%;
+        font-size: 0.9rem; }
+    footer .footer-content .footer-social h2 {
+      color: #f7f7f7;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 1rem; }
+    footer .footer-content .footer-social .subscription-form {
+      background-color: #f7f7f7;
+      height: 35px;
+      width: 25vw;
+      position: relative; }
+      footer .footer-content .footer-social .subscription-form input {
+        height: 100%;
+        width: 100%;
+        background: transparent;
+        border: none;
+        padding-left: 10px;
+        font-family: inherit;
+        font-size: 0.75rem;
+        font-weight: 500;
+        line-height: 35px;
+        color: #ff5050; }
+        footer .footer-content .footer-social .subscription-form input::placeholder {
+          color: black;
+          font-family: inherit;
+          font-weight: 500; }
+      footer .footer-content .footer-social .subscription-form button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+        background-color: #4f4f4f;
+        border: none;
+        padding: 0% 10px;
+        height: 35px;
+        font-family: inherit;
+        font-weight: 500;
+        font-size: 0.75rem;
+        color: #f7f7f7;
+        transition: all 0.15s ease-in-out; }
+        footer .footer-content .footer-social .subscription-form button:hover {
+          opacity: 0.8; }
+    footer .footer-content .footer-social li {
+      display: inline-block;
+      margin: 1rem 15px 0% 0%;
+      list-style: none;
+      font-size: 1.7rem;
+      color: #f7f7f7; }
+      footer .footer-content .footer-social li a:hover {
+        color: #4f4f4f; }
+
 main {
   background-color: #f7f7f7;
   border-top: 1px solid #e1e1e1;
@@ -1351,13 +1438,52 @@ main > p {
       color: #ff5050; }
   .job-page .job-page-description p {
     margin: 0% 0% 3% 0%;
-    letter-spacing: 0.2px; }
+    letter-spacing: 0.2px;
+    white-space: pre-wrap; }
   .job-page .job-page-benefits li {
     font-weight: 500;
     margin: 5% 0%; }
 
 .job-columns {
   margin-top: 4%; }
+
+.job-admin-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2%;
+  height: 2rem; }
+  .job-admin-control a {
+    height: 100%;
+    width: 40%;
+    margin: 0% 2.5% 5% 2.5%;
+    font-size: 0.9rem;
+    line-height: 2rem;
+    text-align: center;
+    box-shadow: -1px 1px 3px #e1e1e1;
+    transition: all 0.15s ease-in-out; }
+    .job-admin-control a:hover {
+      transform: scale(1.02); }
+    .job-admin-control a:first-of-type {
+      background-color: #ffc528;
+      color: #4f4f4f; }
+  .job-admin-control form {
+    width: 40%;
+    margin: 0% 2.5% 5% 2.5%; }
+    .job-admin-control form button {
+      border: none;
+      outline: none;
+      font-family: inherit;
+      height: 100%;
+      width: 100%;
+      font-size: 0.9rem;
+      line-height: 2rem;
+      background-color: #ff2828;
+      color: white;
+      box-shadow: -1px 1px 3px #e1e1e1;
+      transition: all 0.15s ease-in-out; }
+      .job-admin-control form button:hover {
+        transform: scale(1.02); }
 
 .section-apply {
   height: 15vh;
@@ -1383,89 +1509,133 @@ main > p {
 .job-advice > a {
   margin-bottom: 0% !important; }
 
-footer {
-  position: relative;
-  background-color: #ff5050;
-  height: 50vh;
-  color: black; }
-  footer a:hover {
-    color: #f7f7f7; }
-  footer #footer-logo {
-    position: absolute;
-    left: -9.5%;
-    max-height: 100%; }
-  footer .footer-content {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0% 5% 0% 10%;
-    height: 100%; }
-    footer .footer-content .footer-about {
-      max-width: 25%; }
-      footer .footer-content .footer-about h1 {
-        font-family: "Josefin Sans", monospace;
-        font-size: 2rem;
-        color: #f7f7f7; }
-      footer .footer-content .footer-about p {
-        font-size: 0.9rem;
-        line-height: 1.3rem; }
-    footer .footer-content .footer-sitemap {
-      margin: 0%; }
-      footer .footer-content .footer-sitemap div:nth-of-type(2n) {
-        margin-top: 1.2rem; }
-      footer .footer-content .footer-sitemap h2 {
-        color: #f7f7f7;
-        font-size: 1.2rem;
-        font-weight: 500; }
-      footer .footer-content .footer-sitemap li {
-        margin: 0.8rem 0%;
-        font-size: 0.9rem; }
-    footer .footer-content .footer-social h2 {
-      color: #f7f7f7;
-      font-size: 1.2rem;
-      font-weight: 500;
-      margin-bottom: 1rem; }
-    footer .footer-content .footer-social .subscription-form {
-      background-color: #f7f7f7;
-      height: 35px;
-      width: 25vw;
-      position: relative; }
-      footer .footer-content .footer-social .subscription-form input {
-        height: 100%;
-        width: 100%;
-        background: transparent;
-        border: none;
-        padding-left: 10px;
-        font-family: inherit;
-        font-size: 0.75rem;
-        font-weight: 500;
-        line-height: 35px;
-        color: #ff5050; }
-        footer .footer-content .footer-social .subscription-form input::placeholder {
-          color: black;
-          font-family: inherit;
-          font-weight: 500; }
-      footer .footer-content .footer-social .subscription-form button {
+.job-post-form-title {
+  text-align: center; }
+
+form {
+  display: flex;
+  flex-direction: column; }
+  form .submit-job-form-btn {
+    cursor: pointer;
+    width: 20%;
+    border: none;
+    padding: 15px;
+    align-self: center;
+    font-family: inherit;
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-align: center;
+    background-color: #ff5050;
+    color: white; }
+  form .wrapper {
+    margin: 25px 15%;
+    padding: 2.5% 0%;
+    background-color: white; }
+    form .wrapper .job-offer-post {
+      margin: 0% 15%; }
+    form .wrapper textarea {
+      box-sizing: border-box;
+      white-space: pre-wrap;
+      width: 100%;
+      height: 150px;
+      margin: 1% 0% 2% 0%;
+      padding: 2%;
+      border: none;
+      border: 3px solid #f7f7f7;
+      font-family: inherit;
+      font-size: 0.85rem;
+      color: inherit; }
+    form .wrapper .horizontal-input {
+      display: flex;
+      justify-content: space-between; }
+      form .wrapper .horizontal-input .input-box:first-of-type {
+        width: 50%; }
+      form .wrapper .horizontal-input .input-box:nth-of-type(2n) {
+        width: 35%; }
+    form .wrapper .input-box {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      margin: 2% 0%;
+      border-bottom: 3px solid #f7f7f7;
+      padding: 5px 2.5%;
+      height: 40px; }
+      form .wrapper .input-box label {
         position: absolute;
-        top: 0;
-        right: 0;
-        cursor: pointer;
-        background-color: #4f4f4f;
-        border: none;
-        padding: 0% 10px;
-        height: 35px;
+        left: 1vw;
+        top: 40%;
+        transition: all 0.25s ease-in-out;
+        pointer-events: none;
         font-family: inherit;
+        font-size: 0.90rem;
         font-weight: 500;
-        font-size: 0.75rem;
-        color: #f7f7f7;
-        transition: all 0.15s ease-in-out; }
-        footer .footer-content .footer-social .subscription-form button:hover {
-          opacity: 0.8; }
-    footer .footer-content .footer-social li {
-      display: inline-block;
-      margin: 1rem 15px 0% 0%;
-      list-style: none;
-      font-size: 1.7rem;
-      color: #f7f7f7; }
-      footer .footer-content .footer-social li a:hover {
+        color: #ff5050; }
+      form .wrapper .input-box input {
+        border: none;
+        height: 70%;
+        width: 100%;
+        align-self: flex-end;
+        background: transparent;
+        outline: none;
+        font-family: inherit;
+        font-weight: normal;
         color: #4f4f4f; }
+        form .wrapper .input-box input:invalid {
+          box-shadow: none; }
+        form .wrapper .input-box input:focus ~ label, form .wrapper .input-box input:not(:focus):valid ~ label {
+          top: 6px;
+          left: 6px;
+          font-size: 0.65rem;
+          font-weight: 500;
+          color: #ff5050; }
+    form .wrapper .company {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 2%; }
+      form .wrapper .company .company-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border: 1px solid #9d9d9d;
+        width: 80px;
+        height: 80px;
+        background-color: white; }
+        form .wrapper .company .company-image img {
+          max-height: 70px;
+          max-width: 70px; }
+      form .wrapper .company .input-box {
+        align-self: flex-end;
+        margin: 0% 0% 0% 2%;
+        width: 50%; }
+    form .wrapper .job-form-filters .benefit > label {
+      font-size: 0.85rem; }
+    form .wrapper .job-form-filters > .columns {
+      margin: 0%; }
+    form .wrapper .job-description, form .wrapper .job-form-filters {
+      margin-top: 3%; }
+      form .wrapper .job-description p, form .wrapper .job-form-filters p {
+        color: #ff5050;
+        font-size: 0.90rem;
+        font-weight: 500;
+        margin: 3% 0% 0% 1vw; }
+      form .wrapper .job-description hr, form .wrapper .job-form-filters hr {
+        border: none;
+        border-bottom: 3px solid #f7f7f7;
+        opacity: 0.8;
+        margin: 1% 0%; }
+      form .wrapper .job-description input[type=checkbox], form .wrapper .job-form-filters input[type=checkbox] {
+        display: none; }
+      form .wrapper .job-description .columns, form .wrapper .job-form-filters .columns {
+        margin: 0% 2%; }
+        form .wrapper .job-description .columns .column, form .wrapper .job-form-filters .columns .column {
+          padding: 0; }
+        form .wrapper .job-description .columns li, form .wrapper .job-form-filters .columns li {
+          list-style: none;
+          margin: 10% 0%;
+          font-size: 0.85rem;
+          letter-spacing: 0.3px; }
+          form .wrapper .job-description .columns li:hover > label, form .wrapper .job-form-filters .columns li:hover > label {
+            color: #ff5050; }
+        form .wrapper .job-description .columns label, form .wrapper .job-form-filters .columns label {
+          cursor: pointer; }
