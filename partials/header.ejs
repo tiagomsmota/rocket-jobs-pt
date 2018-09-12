@@ -1,123 +1,111 @@
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Rocket Jobs</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/stylesheets/css/style.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
-</head>
-
-<body>
-    <header>
-        <nav>
-            <a href="/"><img id="logo" src="/imgs/logo.png" alt="Rocket Jobs logo"></a>
-            <div>
-                <a href="#">Entrar</a>
-                <a href="/jobs/new">Anunciar</a>
-            </div>
-        </nav>
-        <div id="search-menu">
-            <form>
-                <div class="search-menu-filters-main">
-                    <div class="input-box">
-                        <i class="fas fa-tshirt"></i>
-                        <input type="text" name="job-role" placeholder="Função">
-                    </div>
-                    <div class="input-box">
-                        <i class="fas fa-globe-africa"></i>
-                        <input type="text" name="location" placeholder="Localização">
-                    </div>
-                </div>
-                <div class="search-menu-filters-extra collapsed">
-                    <div class="input-filters">
-                        <div class="input-box">
-                            <i class="fas fa-home"></i>
-                            <input type="text" name="company" placeholder="Empresa">
-                        </div>
-                        <div class="input-box">
-                            <i class="fas fa-clock"></i>
-                            <input type="text" name="regimen" placeholder="Regime">
-                        </div>
-                        <div class="input-box">
-                            <i class="fas fa-wrench"></i>
-                            <input type="text" name="skills" placeholder="Competências">
-                        </div>
-                    </div>
-                    <div class="benefits-filters">
-                        <p><span><i class="fas fa-plus-circle"></i></span> Benefícios</p>   
-                        <hr>
-                        <div class="columns">
-                            <div class="column">
-                                <ul> 
-                                    <li class="benefit">
-                                        <label>Seguro de saúde</label>
-                                        <input type="checkbox" name="benefits" value="seguro-saude">
-                                    </li>
-                                    <li class="benefit">
-                                        <label>Seguro de vida</label>
-                                        <input type="checkbox" name="benefits" value="seguro-vida">
-                                    </li>
-                                    <li class="benefit">
-                                        <label>Ginásio</label>
-                                        <input type="checkbox" name="benefits" value="ginasio">
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="column">
-                                <ul>
-                                    <li class="benefit">
-                                        <label>Horário flexível</label>
-                                        <input type="checkbox" name="benefits" value="horario-flexivel">
-                                    </li>
-                                    <li class="benefit">
-                                        <label>Trabalho remoto</label>
-                                        <input type="checkbox" name="benefits" value="trabalho-remoto">
-                                    </li>
-                                    <li class="benefit">
-                                        <label>Opções de relocação</label>
-                                        <input type="checkbox" name="benefits" value="formacao">
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="column">
-                                <ul>
-                                    <li class="benefit">
-                                        <label>Café gratuito</label>
-                                        <input type="checkbox" name="benefits" value="cafe-gratuito">
-                                    </li>
-                                    <li class="benefit">
-                                        <label>Snacks gratuitos</label>
-                                        <input type="checkbox" name="benefits" value="snacks-gratuitos">
-                                    </li>
-                                    <li class="benefit">
-                                        <label>Animais permitidos</label>
-                                        <input type="checkbox" name="benefits" value="animais">
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="column">
-                                <ul>
-                                    <li class="benefit">
-                                        <label>Team-building</label>
-                                        <input type="checkbox" name="benefits" value="team-building">
-                                    </li>    
-                                    <li class="benefit">
-                                        <label>Opções de formação</label>
-                                        <input type="checkbox" name="benefits" value="formacao">
-                                    </li>
-                                    <li class="benefit">
-                                        <label>Duches</label>
-                                        <input type="checkbox" name="benefits" value="duches">
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button><i class="fas fa-search"></i></button>
-            </form>
-            <p id="filter-toggle">Vê mais filtros...</p>
+<header>
+    <nav>
+        <a href="/"><img id="logo" src="/imgs/logo.png" alt="Rocket Jobs logo"></a>
+        <div>
+            <a href="/login">Entrar</a>
+            <a href="/jobs/new">Anunciar</a>
         </div>
-    </header>
+    </nav>
+    <div id="search-menu">
+        <form>
+            <div class="search-menu-filters-main">
+                <div class="input-box">
+                    <i class="fas fa-tshirt"></i>
+                    <input type="text" name="job-role" placeholder="Função">
+                </div>
+                <div class="input-box">
+                    <i class="fas fa-globe-africa"></i>
+                    <input type="text" name="location" placeholder="Localização">
+                </div>
+            </div>
+            <div class="search-menu-filters-extra collapsed">
+                <div class="input-filters">
+                    <div class="input-box">
+                        <i class="fas fa-home"></i>
+                        <input type="text" name="company" placeholder="Empresa">
+                    </div>
+                    <div class="input-box">
+                        <i class="fas fa-clock"></i>
+                        <input type="text" name="regimen" placeholder="Regime">
+                    </div>
+                    <div class="input-box">
+                        <i class="fas fa-wrench"></i>
+                        <input type="text" name="skills" placeholder="Competências">
+                    </div>
+                </div>
+                <div class="benefits-filters">
+                    <p><span><i class="fas fa-plus-circle"></i></span> Benefícios</p>   
+                    <hr>
+                    <div class="columns">
+                        <div class="column">
+                            <ul> 
+                                <li class="benefit">
+                                    <label>Seguro de saúde</label>
+                                    <input type="checkbox" name="benefits" value="seguro-saude">
+                                </li>
+                                <li class="benefit">
+                                    <label>Seguro de vida</label>
+                                    <input type="checkbox" name="benefits" value="seguro-vida">
+                                </li>
+                                <li class="benefit">
+                                    <label>Ginásio</label>
+                                    <input type="checkbox" name="benefits" value="ginasio">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <ul>
+                                <li class="benefit">
+                                    <label>Horário flexível</label>
+                                    <input type="checkbox" name="benefits" value="horario-flexivel">
+                                </li>
+                                <li class="benefit">
+                                    <label>Trabalho remoto</label>
+                                    <input type="checkbox" name="benefits" value="trabalho-remoto">
+                                </li>
+                                <li class="benefit">
+                                    <label>Opções de relocação</label>
+                                    <input type="checkbox" name="benefits" value="formacao">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <ul>
+                                <li class="benefit">
+                                    <label>Café gratuito</label>
+                                    <input type="checkbox" name="benefits" value="cafe-gratuito">
+                                </li>
+                                <li class="benefit">
+                                    <label>Snacks gratuitos</label>
+                                    <input type="checkbox" name="benefits" value="snacks-gratuitos">
+                                </li>
+                                <li class="benefit">
+                                    <label>Animais permitidos</label>
+                                    <input type="checkbox" name="benefits" value="animais">
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="column">
+                            <ul>
+                                <li class="benefit">
+                                    <label>Team-building</label>
+                                    <input type="checkbox" name="benefits" value="team-building">
+                                </li>    
+                                <li class="benefit">
+                                    <label>Opções de formação</label>
+                                    <input type="checkbox" name="benefits" value="formacao">
+                                </li>
+                                <li class="benefit">
+                                    <label>Duches</label>
+                                    <input type="checkbox" name="benefits" value="duches">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button><i class="fas fa-search"></i></button>
+        </form>
+        <p id="filter-toggle">Vê mais filtros...</p>
+    </div>
+</header>

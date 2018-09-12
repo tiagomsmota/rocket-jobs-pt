@@ -23,10 +23,17 @@ var jobRoutes = require("./routes/job.js");
 
 app.use(jobRoutes);
 
-app.get("/", function(req,res) {
+app.get("/", function(req, res) {
     res.redirect("/jobs");
 });
 
+app.get("/login", function(req, res) {
+    res.render("login");
+});
+
+app.get("/reg", function(req, res) {
+    res.render("register");
+});
 
 //----server setup
 app.listen(3000, function() {
