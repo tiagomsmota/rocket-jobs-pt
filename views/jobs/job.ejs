@@ -57,26 +57,31 @@
             </div>
             <div class="column">
                 <aside>
-                    <div class="job-admin-control">
-                        <a href="/jobs/<%= job._id %>/edit">Editar</a>
-                        <form action="/jobs/<%= job._id %>?_method=DELETE" method="POST">
-                            <button>Eliminar</button>
-                        </form>
+                    <% if(user.isCompany === false) { %>
+                        <section class="section-apply">
+                            <a href="#"><div>
+                                <p>Candidata-te</p>
+                            </div></a>
+                        </section>
+                        <section class="section-auth job-advice">
+                            <h1>Uma dica...</h1>
+                            <p>Mantém a tua candidatura simples e direta, as candidaturas breves costumam ter um melhor feedback.</p>
+                            <p>Para criar impacto, inclui apenas uma breve descrição pessoal e anexa o teu currículo.</p>
+                            <a href="#">Queres saber mais?</a>
+                        </section>
+                    <% } else if(job.company === user.username) { %>
+                    <div class="job-admin">
+                        <div class="job-admin-control">
+                            <a href="/jobs/<%= job._id %>/edit">Editar</a>
+                            <form action="/jobs/<%= job._id %>?_method=DELETE" method="POST">
+                                <button>Eliminar</button>
+                            </form>
+                        </div>
                     </div>
-                    <section class="section-apply">
-                        <a href="#"><div>
-                            <p>Candidata-te</p>
-                        </div></a>
-                    </section>
-                    <section class="section-auth job-advice">
-                        <h1>Uma dica...</h1>
-                        <p>Mantém a tua candidatura simples e direta, as candidaturas breves costumam ter um melhor feedback.</p>
-                        <p>Para criar impacto, inclui apenas uma breve descrição pessoal e anexa o teu currículo.</p>
-                        <a href="#">Queres saber mais?</a>
-                    </section>
-                    <section class="section-advertisement">
-                        <img id="advertisement-image" src="/imgs/publicidade.jpg" alt="Imagem publicitária">
-                        <div id="advertisement-text">
+                    <% } %>
+                    <section class="section-advert">
+                        <img id="advert-image" src="/imgs/publicidade.jpg" alt="Imagem publicitária">
+                        <div id="advert-text">
                             <h1>Canon Global</h1>
                             <p>Leader in the fields of professional and consumer imaging equipment and information systems.</p>
                         </div>

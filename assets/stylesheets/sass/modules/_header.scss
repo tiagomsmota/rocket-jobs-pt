@@ -13,6 +13,10 @@ nav {
         width: 50%;
         text-align: right;
 
+        form {
+            display: none;
+        }
+        
         a {
             text-decoration: none;
             color: inherit;

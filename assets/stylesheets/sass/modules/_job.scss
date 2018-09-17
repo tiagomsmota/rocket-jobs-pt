@@ -147,55 +147,74 @@ main > p {
     margin-top: 4%;
 }
 
-.job-admin-control {
+.job-admin {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2%;
-    height: 2rem;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5%;
+    margin-bottom: 5%;
+    background-color: white;
+    box-shadow: -1px 1px 3px $color-grey-bg-border;
 
-    a {
-        height: 100%;
-        width: 40%;
-        margin: 0% 2.5% 5% 2.5%;
-        font-size: 0.9rem;
-        line-height: 2rem;
-        text-align: center;
-        box-shadow: -1px 1px 3px $color-grey-bg-border;
-        transition: all 0.15s ease-in-out;
-
-        &:hover {
-            transform: scale(1.02);
-        }
-
-        &:first-of-type {
-            background-color: #ffc528;
-            color: $color-grey-main;
-        }
+    h1 {
+        align-self: center;
+        margin-bottom: 5%;
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+        // font-weight: 500;
+        color: $color-primary;
     }
-    
-    form {
-        width: 40%;
-        margin: 0% 2.5% 5% 2.5%;
 
-        button {
-            border: none;
-            outline: none;
-            font-family: inherit;
+    .job-admin-control {
+        position: relative;
+        display: flex;
+    
+        a {
             height: 100%;
             width: 100%;
-            font-size: 0.9rem;
+            margin: 0% 2.5%;
+            font-size: 0.85rem;
             line-height: 2rem;
-            background-color: #ff2828;
-            color: white;
+            text-align: center;
             box-shadow: -1px 1px 3px $color-grey-bg-border;
             transition: all 0.15s ease-in-out;
-            
+    
             &:hover {
                 transform: scale(1.02);
             }
+    
+            &:first-of-type {
+                background-color: $color-grey-bg;
+                color: $color-primary;
+            }
+        }
+        
+        form {
+            width: 100%;
+            margin: 0% 2.5% 0% 2.5%;
+    
+            button {
+                cursor: pointer;
+                border: none;
+                outline: none;
+                font-family: inherit;
+                height: 100%;
+                width: 100%;
+                font-size: 0.85rem;
+                line-height: 2rem;
+                background-color: $color-primary;
+                color: white;
+                box-shadow: -1px 1px 3px $color-grey-bg-border;
+                transition: all 0.15s ease-in-out;
+                
+                &:hover {
+                    transform: scale(1.02);
+                }
+            }
         }
     }
+    
+
 }
 
 .section-apply {

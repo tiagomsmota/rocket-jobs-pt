@@ -1,7 +1,7 @@
+//make benefits checked when label is clicked
 var moreFiltersBtn = document.querySelector("#filter-toggle");
 var benefit = document.querySelectorAll(".benefit");
 
-//loop through all benefits
 for(var i = 0; i < benefit.length; i++) {
     benefit[i].addEventListener("click", function(checked) {
         var benefitCheckbox = this.querySelector("input");
@@ -15,8 +15,7 @@ for(var i = 0; i < benefit.length; i++) {
 };
 
 
-
-
+//make filters expand on click - header
 function toggleFilters() {
     var extraFilters = document.querySelector(".search-menu-filters-extra");
 
@@ -28,4 +27,7 @@ moreFiltersBtn.addEventListener("click", function() {
     toggleFilters();
 });
 
-
+//submit form when click anchor to logout
+document.querySelector("#logout-btn").addEventListener("click", function() {
+    document.querySelector("#logout-form").submit();
+});

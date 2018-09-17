@@ -1,10 +1,28 @@
 <header>
     <nav>
         <a href="/"><img id="logo" src="/imgs/logo.png" alt="Rocket Jobs logo"></a>
+        <% if(!user) { %>
         <div>
             <a href="/login">Entrar</a>
             <a href="/jobs/new">Anunciar</a>
         </div>
+        <% } else if(user.isCompany === false) { %>
+        <div>
+            <form id="logout-form" style="display: none" action="/logout" method="POST">
+                <button>Sair</button>
+            </form>
+            <a id="logout-btn">Sair</a>
+            <a href="#"><i class="fas fa-user"></i></a>
+        </div>
+        <% } else { %>
+        <div>
+            <form id="logout-form" style="display: none" action="/logout" method="POST">
+                <button>Sair</button>
+            </form>
+            <a id="logout-btn">Sair</a>
+            <a href="/jobs/new">Anunciar</a>
+        </div>
+        <% } %>
     </nav>
     <div id="search-menu">
         <form>

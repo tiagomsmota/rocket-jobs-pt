@@ -2,8 +2,44 @@
 
 <div class="columns main">
     <div class="column is-two-fifths main-left"></div>
-    <div class="column auto main-right">
-        <a href="/"><img id="logo" src="/imgs/logo-white.png" alt="Rocket Jobs logo"></a>
-        <h1>Hello!</h1>
+        <div class="column auto main-right main-body-reg">
+            <div class="register-page-form">
+                <a href="/"><img id="logo" src="/imgs/logo-white.png" alt="Rocket Jobs logo"></a>
+                <h1>Sê bem vindo</h1>
+                <h2>Estás prestes a entrar na plataforma que te vai lançar para as estrelas, mas antes disso precisamos de algumas informações tuas.</h2>
+                <form action="/register" method="POST">
+                    <div class="input-buttons">
+                        <div class="input-buttons-company">
+                            <input id="input-btn-company" type="radio" name="isCompany" value="true" required>
+                            <label for="input-btn-company">Sou uma empresa</label>
+                        </div>
+                        <div class="input-buttons-talent">
+                            <input id="input-btn-talent" type="radio" name="isCompany" value="false" required>
+                            <label for="input-btn-talent">Sou um talento</label>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" name="username" required>
+                        <label>Nome</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" name="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" name="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="input-terms">
+                        <input id="input-btn-terms" type="checkbox" name="terms" required>
+                        <label for="input-btn-terms">Já li e concordo com os <a href="#">termos e condições</a> do serviço.</label>
+                    </div>    
+                    <button>Fazer parte</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
+
+<span id="filter-toggle"></span>
+<% include ../partials/footer-alt %>

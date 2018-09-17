@@ -53,6 +53,7 @@ body {
   color: #4f4f4f; }
 
 a {
+  cursor: pointer;
   text-decoration: none;
   color: inherit;
   transition: all 0.15s ease-in-out; }
@@ -981,6 +982,8 @@ nav {
     margin-top: 4vh;
     width: 50%;
     text-align: right; }
+    nav div form {
+      display: none; }
     nav div a {
       text-decoration: none;
       color: inherit;
@@ -1317,7 +1320,7 @@ main > h1 {
         font-size: 0.9rem; }
         .columns section.section-auth a:nth-of-type(2n):hover {
           transform: scale(1.02); }
-    .columns section.section-advertisement {
+    .columns section.section-advert {
       cursor: pointer;
       display: flex;
       justify-content: space-between;
@@ -1325,23 +1328,62 @@ main > h1 {
       padding: 7% 5%;
       transition: all 0.15s ease-in-out;
       box-shadow: -1px 1px 3px #e1e1e1; }
-      .columns section.section-advertisement:hover {
+      .columns section.section-advert:hover {
         transform: scale(1.02); }
-      .columns section.section-advertisement #advertisement-image {
+      .columns section.section-advert #advert-image {
         display: block;
         width: 100%;
-        height: auto;
+        height: 100%;
+        min-width: 0;
         padding: 2%; }
-      .columns section.section-advertisement #advertisement-text {
+      .columns section.section-advert #advert-text {
         margin-left: 4%; }
-      .columns section.section-advertisement h1 {
+      .columns section.section-advert h1 {
         margin-bottom: 3%;
         font-size: 1rem;
         color: #ff5050; }
-      .columns section.section-advertisement p {
+      .columns section.section-advert p {
         font-size: 0.7rem;
         letter-spacing: 0.3px;
         line-height: 0.85rem; }
+    .columns section.section-user {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 5%;
+      padding: 0% 10% 10% 10%;
+      box-shadow: -1px 1px 3px #e1e1e1; }
+      .columns section.section-user h1 {
+        margin-bottom: 3%;
+        font-size: 1.5rem;
+        color: #ff5050;
+        text-align: center; }
+      .columns section.section-user .user-profile-image {
+        position: relative;
+        top: -5vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        margin: 0%;
+        border: 1px solid #e1e1e1;
+        border-radius: 50%;
+        width: 110px;
+        height: 110px;
+        background-color: white; }
+        .columns section.section-user .user-profile-image img {
+          max-height: 100px;
+          max-width: 100px; }
+      .columns section.section-user div {
+        margin: 10% 0% 0% 0%; }
+        .columns section.section-user div p {
+          font-size: 0.85rem;
+          line-height: 1.5rem;
+          color: #4f4f4f; }
+        .columns section.section-user div span {
+          margin-right: 0.5rem;
+          font-size: 1rem; }
 
 main > p {
   position: relative;
@@ -1447,43 +1489,55 @@ main > p {
 .job-columns {
   margin-top: 4%; }
 
-.job-admin-control {
+.job-admin {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2%;
-  height: 2rem; }
-  .job-admin-control a {
-    height: 100%;
-    width: 40%;
-    margin: 0% 2.5% 5% 2.5%;
-    font-size: 0.9rem;
-    line-height: 2rem;
-    text-align: center;
-    box-shadow: -1px 1px 3px #e1e1e1;
-    transition: all 0.15s ease-in-out; }
-    .job-admin-control a:hover {
-      transform: scale(1.02); }
-    .job-admin-control a:first-of-type {
-      background-color: #ffc528;
-      color: #4f4f4f; }
-  .job-admin-control form {
-    width: 40%;
-    margin: 0% 2.5% 5% 2.5%; }
-    .job-admin-control form button {
-      border: none;
-      outline: none;
-      font-family: inherit;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 5%;
+  margin-bottom: 5%;
+  background-color: white;
+  box-shadow: -1px 1px 3px #e1e1e1; }
+  .job-admin h1 {
+    align-self: center;
+    margin-bottom: 5%;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    color: #ff5050; }
+  .job-admin .job-admin-control {
+    position: relative;
+    display: flex; }
+    .job-admin .job-admin-control a {
       height: 100%;
       width: 100%;
-      font-size: 0.9rem;
+      margin: 0% 2.5%;
+      font-size: 0.85rem;
       line-height: 2rem;
-      background-color: #ff2828;
-      color: white;
+      text-align: center;
       box-shadow: -1px 1px 3px #e1e1e1;
       transition: all 0.15s ease-in-out; }
-      .job-admin-control form button:hover {
+      .job-admin .job-admin-control a:hover {
         transform: scale(1.02); }
+      .job-admin .job-admin-control a:first-of-type {
+        background-color: #f7f7f7;
+        color: #ff5050; }
+    .job-admin .job-admin-control form {
+      width: 100%;
+      margin: 0% 2.5% 0% 2.5%; }
+      .job-admin .job-admin-control form button {
+        cursor: pointer;
+        border: none;
+        outline: none;
+        font-family: inherit;
+        height: 100%;
+        width: 100%;
+        font-size: 0.85rem;
+        line-height: 2rem;
+        background-color: #ff5050;
+        color: white;
+        box-shadow: -1px 1px 3px #e1e1e1;
+        transition: all 0.15s ease-in-out; }
+        .job-admin .job-admin-control form button:hover {
+          transform: scale(1.02); }
 
 .section-apply {
   height: 15vh;
@@ -1752,3 +1806,103 @@ form {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 130%; }
+
+.main-body-reg {
+  display: flex;
+  align-content: center;
+  justify-content: center; }
+
+.register-page-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .register-page-form h1, .register-page-form h2 {
+    align-self: center;
+    text-align: center; }
+  .register-page-form h2 {
+    font-size: 1rem;
+    line-height: 1.5rem; }
+  .register-page-form form {
+    margin-top: 7%; }
+    .register-page-form form .input-buttons {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 7%; }
+      .register-page-form form .input-buttons div {
+        width: 40%;
+        margin: 0% 2.5% 2% 2.5%; }
+      .register-page-form form .input-buttons input {
+        display: none; }
+      .register-page-form form .input-buttons label {
+        cursor: pointer;
+        padding: 12.5px 2.5%;
+        width: 100%;
+        display: inline-block;
+        background-color: #f7f7f7;
+        color: #ff5050;
+        text-align: center;
+        font-size: 0.9rem;
+        box-shadow: -1px 1px 3px #e1e1e1;
+        transition: all 0.15s ease-in-out; }
+      .register-page-form form .input-buttons input:checked ~ label {
+        background-color: #ff5050;
+        color: white; }
+    .register-page-form form button {
+      cursor: pointer;
+      align-self: center;
+      margin-top: 10%;
+      border: none;
+      padding: 12.5px 0%;
+      width: 25%;
+      background-color: #f7f7f7;
+      color: #e1e1e1;
+      text-decoration: none;
+      text-align: center;
+      font-family: inherit;
+      font-size: 0.9rem;
+      box-shadow: -1px 1px 3px #e1e1e1;
+      transition: all 0.15s ease-in-out; }
+      .register-page-form form button:hover {
+        transform: scale(1.02); }
+  .register-page-form .input-box {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 2%;
+    border-bottom: 3px solid #f7f7f7;
+    padding: 5px 2.5%;
+    height: 40px;
+    width: 100%; }
+    .register-page-form .input-box label {
+      position: absolute;
+      left: 1vw;
+      top: 40%;
+      transition: all 0.25s ease-in-out;
+      pointer-events: none;
+      font-family: inherit;
+      font-size: 0.90rem;
+      font-weight: 500;
+      color: #9d9d9d; }
+    .register-page-form .input-box input {
+      border: none;
+      height: 70%;
+      width: 100%;
+      align-self: flex-end;
+      background: transparent;
+      outline: none;
+      font-family: inherit;
+      font-weight: normal;
+      color: #4f4f4f; }
+      .register-page-form .input-box input:invalid {
+        box-shadow: none; }
+      .register-page-form .input-box input:focus ~ label, .register-page-form .input-box input:not(:focus):valid ~ label {
+        top: 6px;
+        left: 6px;
+        font-size: 0.65rem;
+        font-weight: 500;
+        color: #ff5050; }
+  .register-page-form .input-terms {
+    margin-top: 7%;
+    font-size: 0.85rem; }
+    .register-page-form .input-terms input:hover {
+      border-color: yellow; }

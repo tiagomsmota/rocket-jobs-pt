@@ -15,7 +15,7 @@ app.get("/jobs", function(req, res) {
 });
 
 //new
-app.get("/jobs/new", function(req, res) {
+app.get("/jobs/new", isLoggedIn, function(req, res) {
     res.render("jobs/newjob");
 });
 
@@ -89,5 +89,13 @@ app.delete("/jobs/:id", function(req, res) {
         }
     });
 });
+
+function isLoggedIn(req, res, next) {
+    if(req.isAuthenticated()) {
+        next();
+    } else {
+        res.redirect("/login");
+    }
+}
 
 module.exports = app;

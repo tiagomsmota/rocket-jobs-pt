@@ -33,15 +33,29 @@
             </div>
             <div class="column">
                 <aside>
+                    <% if(!user) { %>
                     <section class="section-auth">
                         <h1>Dispara a tua carreira</h1>
                         <p>Queremos ajudar-te a encontrar a tua primeira oportunidade no mundo das TI e deixar-te em modo rocket.</p>
                         <a href="/login">Já tens uma conta? Faz login</a>
-                        <a href="/reg">Regista-te agora, é grátis</a>
+                        <a href="/register">Regista-te agora, é grátis</a>
                     </section>
-                    <section class="section-advertisement">
-                        <img id="advertisement-image" src="/imgs/publicidade.jpg" alt="Imagem publicitária">
-                        <div id="advertisement-text">
+                    <% } else { %>
+                    <section class="section-user">
+                        <div class="user-profile-image">
+                            <img src="/imgs/rocket.png" alt="Fotografia do utilizador">
+                        </div>
+                        <h1><%= user.username %></h1>
+                        <div>
+                            <%# <p><span><i class="fas fa-calendar-alt"></i></span> Adiciona a tua idade</p> 
+                            <p><span><i class="fas fa-map-marker-alt"></i></span> Adiciona a tua localização</p> %>
+                            <p><span><i class="fas fa-suitcase"></i></span> Não tens vagas guardadas</p>
+                        </div>
+                    </section>
+                    <% } %>
+                    <section class="section-advert">
+                        <img id="advert-image" src="/imgs/publicidade.jpg" alt="Imagem publicitária">
+                        <div id="advert-text">
                             <h1>Canon Global</h1>
                             <p>Leader in the fields of professional and consumer imaging equipment and information systems.</p>
                         </div>
