@@ -48,4 +48,12 @@ middleware.isCreator = function(req, res, next) {
     };
 };
 
+middleware.convertString = function(str) {
+    var string = str.replace(/\w\S*/g, function(x) { 
+      return x.charAt(0).toUpperCase() + x.substr(1);
+    });
+    var convertedString = string.replace(/\s+/g, "");
+    return convertedString.split(",");
+};
+
 module.exports = middleware;

@@ -6,8 +6,7 @@ const express        = require("express"),
       passport       = require("passport"),
       localStrategy  = require("passport-local"),
       session        = require("express-session"),
-      flash          = require("connect-flash"),
-      seedDatabase   = require("./seeds");
+      flash          = require("connect-flash");
 
 app.set("view engine", "ejs");
 app.use(express.static("assets"));
