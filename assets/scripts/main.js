@@ -23,11 +23,32 @@ function toggleFilters() {
     extraFilters.classList.toggle("collapsed");
 };
 
-moreFiltersBtn.addEventListener("click", function() {
-    toggleFilters();
-});
+if(moreFiltersBtn) {
+    moreFiltersBtn.addEventListener("click", function() {
+        toggleFilters();
+    });
+};
+
 
 //submit form when click anchor to logout
-document.querySelector("#logout-btn").addEventListener("click", function() {
-    document.querySelector("#logout-form").submit();
-});
+if(document.querySelector("#logout-btn")) {
+    document.querySelector("#logout-btn").addEventListener("click", function() {
+        document.querySelector("#logout-form").submit();
+    });
+};
+
+//remove flash message when click icon
+if(document.querySelector(".flash-close")) {
+    document.querySelector(".flash-close").addEventListener("click", function() {
+        var errorFlash = document.querySelector(".flash-error");
+        var successFlash = document.querySelector(".flash-success");
+        if(successFlash) {
+            successFlash.style.opacity = 0;
+            setTimeout(() => successFlash.style.display = "none", 500);
+        }
+        if(errorFlash) {
+            errorFlash.style.opacity = 0;
+            setTimeout(() => errorFlash.style.display = "none", 500);
+        }
+    });
+};

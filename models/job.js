@@ -2,7 +2,13 @@ const mongoose = require("mongoose");
 
 var jobSchema = new mongoose.Schema({
     title: String,
-    company: String,
+    company: {
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        },
+        name: String
+    },
     location: String,
     regimen: String,
     description: String,

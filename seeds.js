@@ -63,23 +63,6 @@ var jobData = [
 //     }
 // ];
 
-// var companyData = [
-//     {
-//     name: "Pixel Penguin",
-//     location: "Porto, Portugal",
-//     email: "main@pixelpenguin.com"
-//     },
-//     {
-//     name: "GoBOX",
-//     location: "Lisboa, Portugal",
-//     email: "main@gobox.com"
-//     },
-//     {
-//     name: "Cobra Systems",
-//     location: "Coimbra, Portugal",
-//     email: "main@cobrasys.com"
-//     }
-// ];
 
 function seedDatabase() {
     //Job handling

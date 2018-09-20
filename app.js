@@ -6,12 +6,15 @@ const express        = require("express"),
       passport       = require("passport"),
       localStrategy  = require("passport-local"),
       session        = require("express-session"),
+      flash          = require("connect-flash"),
       seedDatabase   = require("./seeds");
 
 app.set("view engine", "ejs");
 app.use(express.static("assets"));
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended : true}));
 app.use(methodOverride("_method"));
+app.use(flash());
+
 
 //----database setup - mongoose
 mongoose.connect("mongodb://localhost:27017/rocket-jobs", {useNewUrlParser: true});
@@ -32,12 +35,12 @@ passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-seedDatabase();
-
 
 //----defining locals
 app.use(function(req, res, next) {
     res.locals.user = req.user;
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
     next();
 });
 
@@ -53,13 +56,6 @@ app.get("/", function(req, res) {
     res.redirect("/jobs");
 });
 
-function isLoggedIn(req, res, next) {
-    if(req.isAuthenticated()) {
-        next();
-    } else {
-        res.redirect("/login");
-    }
-}
 
 //----server setup
 app.listen(3000, function() {

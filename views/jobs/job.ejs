@@ -1,94 +1,96 @@
 <% include ../../partials/head %>
 <% include ../../partials/header %>
 
-    <main>
-        <!-- <p><a href="#">Página principal</a> - <a href="#">Resultados da pesquisa</a> - <span>Front-end Developer @ Pixel Penguin</span></p> -->
-        <div class="columns job-columns">
-            <div class="column is-two-thirds">
-                <div class="job-page">
-                    <div class="job-page-image">
-                        <img src="/imgs/rocket.png" alt="Logo da empresa">
+<% include ../../partials/flash %>
+
+<main>
+    <!-- <p><a href="#">Página principal</a> - <a href="#">Resultados da pesquisa</a> - <span>Front-end Developer @ Pixel Penguin</span></p> -->
+    <div class="columns job-columns">
+        <div class="column is-two-thirds">
+            <div class="job-page">
+                <div class="job-page-image">
+                    <img src="/imgs/rocket.png" alt="Logo da empresa">
+                </div>
+                <div class="job-page-meta-top">
+                    <p><%= job.location%></p>
+                    <p>Há <%= job.dateAdded %> dias</p>
+                </div>
+                <h1><%= job.title %></h1>
+                <div class="job-page-meta-bottom">
+                    <div>
+                        <p><span><i class="fas fa-home"></i></span> <a href="#"><%= job.company.name %></a></p>
+                        <span class="divider"><i class="fas fa-square-full"></i></span>
+                        <p><%= job.regimen %></p>
                     </div>
-                    <div class="job-page-meta-top">
-                        <p><%= job.location%></p>
-                        <p>Há <%= job.dateAdded %> dias</p>
-                    </div>
-                    <h1><%= job.title %></h1>
-                    <div class="job-page-meta-bottom">
-                        <div>
-                            <p><span><i class="fas fa-home"></i></span> <a href="#"><%= job.company %></a></p>
-                            <span class="divider"><i class="fas fa-square-full"></i></span>
-                            <p><%= job.regimen %></p>
+                </div>
+                <div class="job-page-skills">
+                    <h2><span><i class="fas fa-wrench"></i></span>Principais competências</h2>
+                    <div class="columns job-skills">
+                        <div class="column">
+                            <ul>
+                            <% job.skills.forEach(function(skill) { %>
+                                <li><span>#</span><%= skill %></li>
+                            <% }); %>
+                            </ul>
                         </div>
                     </div>
-                    <div class="job-page-skills">
-                        <h2><span><i class="fas fa-wrench"></i></span>Principais competências</h2>
-                        <div class="columns job-skills">
-                            <div class="column">
-                                <ul>
-                                <% job.skills.forEach(function(skill) { %>
-                                    <li><span>#</span><%= skill %></li>
-                                <% }); %>
-                                </ul>
-                            </div>
+                </div>
+                <div class="job-page-description">
+                    <h2><span><i class="fas fa-ellipsis-h"></i></span>Descrição</h2>
+                    <div class="columns job-description">
+                        <div class="column">
+                            <p><%= job.description %></p>
                         </div>
                     </div>
-                    <div class="job-page-description">
-                        <h2><span><i class="fas fa-ellipsis-h"></i></span>Descrição</h2>
-                        <div class="columns job-description">
-                            <div class="column">
-                                <p><%= job.description %></p>
-                            </div>
-                        </div>
-                    </div>                    
-                    <div class="job-page-benefits">
-                        <h2><span><i class="fas fa-plus-circle"></i></span>Benefícios</h2>
-                        <div class="columns job-benefits">
-                            <div class="column">
-                                <ul>
-                                <% job.benefits.forEach(function(benefit) { %>
-                                    <li><%= benefit %></li>
-                                <% }); %>
-                                </ul>
-                            </div>
+                </div>                    
+                <div class="job-page-benefits">
+                    <h2><span><i class="fas fa-plus-circle"></i></span>Benefícios</h2>
+                    <div class="columns job-benefits">
+                        <div class="column">
+                            <ul>
+                            <% job.benefits.forEach(function(benefit) { %>
+                                <li><%= benefit %></li>
+                            <% }); %>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="column">
-                <aside>
-                    <% if(user.isCompany === false) { %>
-                        <section class="section-apply">
-                            <a href="#"><div>
-                                <p>Candidata-te</p>
-                            </div></a>
-                        </section>
-                        <section class="section-auth job-advice">
-                            <h1>Uma dica...</h1>
-                            <p>Mantém a tua candidatura simples e direta, as candidaturas breves costumam ter um melhor feedback.</p>
-                            <p>Para criar impacto, inclui apenas uma breve descrição pessoal e anexa o teu currículo.</p>
-                            <a href="#">Queres saber mais?</a>
-                        </section>
-                    <% } else if(job.company === user.username) { %>
-                    <div class="job-admin">
-                        <div class="job-admin-control">
-                            <a href="/jobs/<%= job._id %>/edit">Editar</a>
-                            <form action="/jobs/<%= job._id %>?_method=DELETE" method="POST">
-                                <button>Eliminar</button>
-                            </form>
-                        </div>
-                    </div>
-                    <% } %>
-                    <section class="section-advert">
-                        <img id="advert-image" src="/imgs/publicidade.jpg" alt="Imagem publicitária">
-                        <div id="advert-text">
-                            <h1>Canon Global</h1>
-                            <p>Leader in the fields of professional and consumer imaging equipment and information systems.</p>
-                        </div>
-                    </section>
-                </aside>
-            </div>
         </div>
-    </main>
+        <div class="column">
+            <aside>
+                <% if(!user || user.isCompany === false) { %>
+                    <section class="section-apply">
+                        <a href="#"><div>
+                            <p>Candidata-te</p>
+                        </div></a>
+                    </section>
+                    <section class="section-auth job-advice">
+                        <h1>Uma dica...</h1>
+                        <p>Mantém a tua candidatura simples e direta, as candidaturas breves costumam ter um melhor feedback.</p>
+                        <p>Para criar impacto, inclui apenas uma breve descrição pessoal e anexa o teu currículo.</p>
+                        <a href="#">Queres saber mais?</a>
+                    </section>
+                <% } else if(user && job.company.id.equals(user._id)) { %>
+                <div class="job-admin">
+                    <div class="job-admin-control">
+                        <a href="/jobs/<%= job._id %>/edit">Editar</a>
+                        <form action="/jobs/<%= job._id %>?_method=DELETE" method="POST">
+                            <button>Eliminar</button>
+                        </form>
+                    </div>
+                </div>
+                <% } %>
+                <section class="section-advert">
+                    <img id="advert-image" src="/imgs/publicidade.jpg" alt="Imagem publicitária">
+                    <div id="advert-text">
+                        <h1>Canon Global</h1>
+                        <p>Leader in the fields of professional and consumer imaging equipment and information systems.</p>
+                    </div>
+                </section>
+            </aside>
+        </div>
+    </div>
+</main>
 
 <% include ../../partials/footer %>
