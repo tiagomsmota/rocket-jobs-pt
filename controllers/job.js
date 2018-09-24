@@ -45,7 +45,7 @@ jobController.create = function(req,res) {
             req.flash("error", "Algo de errado aconteceu, tenta novamente mais tarde.");
         } else {
             createdJob.save();
-            req.flash("success", "Submetes-te uma vaga no Rocket Jobs.");
+            req.flash("success", "Submeteste uma vaga no Rocket Jobs.");
             res.redirect("/jobs");
         }
     });
