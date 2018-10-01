@@ -1,5 +1,6 @@
 const express           = require("express"),
       app               = express(),
+      PORT              = process.env.PORT || 3000,
       bodyParser        = require("body-parser"),
       methodOverride    = require("method-override"),
       mongoose          = require("mongoose"),
@@ -59,6 +60,5 @@ app.get("/", function(req, res) {
 
 //---- server setup
 app.listen(3000, function() {
-    console.log("Server is now running on port 3000");
+    console.log(`Server is now running on port ${PORT}`);
 });
-
