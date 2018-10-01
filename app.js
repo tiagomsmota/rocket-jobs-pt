@@ -19,7 +19,7 @@ app.use(flash());
 
 //---- database setup - mongoose
 // mongoose.connect("mongodb://localhost:27017/rocket-jobs", {useNewUrlParser: true});
-mongoose.connect("mongodb://rocketjobs-main:rocketjobsmain1@ds161751.mlab.com:61751/rocketjobs", {useNewUrlParser: true});
+mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
 var Job = require("./models/job.js");
 var User = require("./models/user.js");
 
