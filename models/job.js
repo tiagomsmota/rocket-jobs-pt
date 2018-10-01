@@ -7,7 +7,8 @@ var jobSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: "User"
         },
-        name: String
+        name: String,
+        image: String
     },
     location: String,
     regimen: String,

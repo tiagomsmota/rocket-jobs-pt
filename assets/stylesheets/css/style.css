@@ -65,8 +65,10 @@ a {
   right: 1%;
   display: flex;
   justify-content: space-around;
+  z-index: 5;
   min-width: 25vw;
   max-width: 60vw;
+  border: 0.5px solid #e1e1e1;
   border-left: 5px solid #f74242;
   border-radius: 5px;
   padding: 2%;
@@ -91,7 +93,10 @@ a {
     cursor: pointer;
     font-size: 1.7rem;
     color: #9d9d9d;
-    align-self: center; }
+    align-self: center;
+    transition: all 0.25s ease-in-out; }
+    .flash-error .flash-close:hover {
+      color: #9d9d9d; }
 
 .flash-success {
   position: fixed;
@@ -99,10 +104,12 @@ a {
   right: 1%;
   display: flex;
   justify-content: space-around;
+  z-index: 5;
   min-width: 25vw;
   max-width: 100vw;
-  border-left: 5px solid #69f24b;
   border-radius: 5px;
+  border: 0.5px solid #e1e1e1;
+  border-left: 5px solid #69f24b;
   padding: 2%;
   background-color: #f7f7f7;
   transition: all 0.2s ease-in-out; }
@@ -125,7 +132,10 @@ a {
     cursor: pointer;
     font-size: 1.7rem;
     color: #9d9d9d;
-    align-self: center; }
+    align-self: center;
+    transition: all 0.25s ease-in-out; }
+    .flash-success .flash-close:hover {
+      color: #9d9d9d; }
 
 /*! bulma.io v0.7.1 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
@@ -1143,7 +1153,7 @@ nav {
         cursor: pointer; }
   #search-menu .input-box {
     margin: 1% 1%;
-    border: 1px solid #9d9d9d;
+    border: 1px solid #e1e1e1;
     padding: 0% 0% 0% 2%;
     width: 50%;
     height: 7vh;
@@ -1426,6 +1436,7 @@ main > h1 {
       .columns section.section-user h1 {
         margin-bottom: 3%;
         font-size: 1.5rem;
+        font-weight: 500;
         color: #ff5050;
         text-align: center; }
       .columns section.section-user .user-profile-image {
@@ -1444,15 +1455,181 @@ main > h1 {
         .columns section.section-user .user-profile-image img {
           max-height: 100px;
           max-width: 100px; }
-      .columns section.section-user div {
+      .columns section.section-user #open-user-options-btn {
+        cursor: pointer;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: #9d9d9d;
+        font-size: 1.2rem; }
+      .columns section.section-user .user-options {
         margin: 10% 0% 0% 0%; }
-        .columns section.section-user div p {
+        .columns section.section-user .user-options p {
+          cursor: pointer;
           font-size: 0.85rem;
           line-height: 1.5rem;
-          color: #4f4f4f; }
-        .columns section.section-user div span {
+          color: #4f4f4f;
+          transition: all 0.25s ease-in-out; }
+          .columns section.section-user .user-options p:hover {
+            color: #ff5050; }
+        .columns section.section-user .user-options span {
           margin-right: 0.5rem;
-          font-size: 1rem; }
+          font-size: 1rem;
+          transition: all 0.25s ease-in-out;
+          color: #ff5050; }
+
+#input-window-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: all 0.25s ease-in-out; }
+  #input-window-background .image-input-window {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    width: 50vw;
+    height: 60vh; }
+  #input-window-background h1 {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    font-size: 1.2rem;
+    width: 80%;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f7f7f7;
+    color: #ff5050; }
+  #input-window-background span {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2rem;
+    color: #e1e1e1;
+    transition: all 0.25s ease-in-out; }
+    #input-window-background span:hover {
+      color: #9d9d9d; }
+  #input-window-background form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%; }
+    #input-window-background form .btn {
+      position: relative;
+      border: 2px solid #f7f7f7;
+      border-radius: 50px;
+      padding: 3% 5%;
+      margin: 10vh 0%;
+      transition: all 0.25s ease-in-out; }
+      #input-window-background form .btn:hover {
+        border: 2px solid #ff5050; }
+      #input-window-background form .btn input {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-height: 100%;
+        min-width: 100%;
+        border-radius: 50px;
+        opacity: 0; }
+    #input-window-background form button {
+      cursor: pointer;
+      position: absolute;
+      bottom: 20px;
+      border: none;
+      outline: none;
+      background: #ff5050;
+      color: white;
+      border-radius: 50px;
+      width: 30%;
+      height: 35px;
+      font-family: inherit;
+      font-size: 1rem;
+      box-shadow: -1px 1px 3px #e1e1e1;
+      transition: all 0.25s ease-in-out; }
+      #input-window-background form button:hover {
+        transform: scale(1.02); }
+
+#delete-window-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: all 0.25s ease-in-out; }
+  #delete-window-background .delete-window {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    width: 50vw;
+    height: 40vh; }
+  #delete-window-background h1 {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    font-size: 1.2rem;
+    width: 80%;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f7f7f7;
+    color: #ff5050; }
+  #delete-window-background span {
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2rem;
+    color: #e1e1e1;
+    transition: all 0.25s ease-in-out; }
+    #delete-window-background span:hover {
+      color: #9d9d9d; }
+  #delete-window-background .user-decision-input {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin-top: 5vh; }
+    #delete-window-background .user-decision-input form {
+      display: none; }
+    #delete-window-background .user-decision-input .confirm-delete-user-btn, #delete-window-background .user-decision-input .cancel-delete-user-btn {
+      background-color: #ff5050;
+      color: white;
+      height: 40px;
+      width: 70%;
+      margin: 0% 2.5%;
+      line-height: 40px;
+      text-align: center;
+      font-size: 0.9rem;
+      border-radius: 50px;
+      box-shadow: -1px 1px 3px #e1e1e1;
+      transition: all 0.25s ease-in-out; }
+      #delete-window-background .user-decision-input .confirm-delete-user-btn:hover, #delete-window-background .user-decision-input .cancel-delete-user-btn:hover {
+        transform: scale(1.02); }
+    #delete-window-background .user-decision-input .cancel-delete-user-btn {
+      background-color: #f7f7f7;
+      color: #ff5050; }
+
+.hide {
+  display: none !important; }
 
 main > p {
   position: relative;
@@ -1720,7 +1897,7 @@ form {
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        border: 1px solid #9d9d9d;
+        border: 1px solid #e1e1e1;
         width: 80px;
         height: 80px;
         background-color: white; }

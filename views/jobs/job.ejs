@@ -9,7 +9,11 @@
         <div class="column is-two-thirds">
             <div class="job-page">
                 <div class="job-page-image">
+                <% if(job.company.image) { %>
+                    <img src="<%= job.company.image %>" alt="Logo da empresa">
+                <% } else { %>
                     <img src="/imgs/rocket.png" alt="Logo da empresa">
+                <% } %>
                 </div>
                 <div class="job-page-meta-top">
                     <p><%= job.location%></p>

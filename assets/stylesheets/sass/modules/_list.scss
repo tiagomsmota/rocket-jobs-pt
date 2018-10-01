@@ -214,6 +214,7 @@ main > h1 {
             h1 {
                 margin-bottom: 3%;
                 font-size: 1.5rem;
+                font-weight: 500;
                 color: $color-primary;
                 text-align: center;
             }
@@ -237,21 +238,235 @@ main > h1 {
                     max-width: 100px;
                 }
             }
+            
+            #open-user-options-btn {
+                cursor: pointer;
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                color: $color-grey-borders;
+                font-size: 1.2rem;
+            }
 
-            div {
+            .user-options {
                 margin: 10% 0% 0% 0%;
-        
+
                 p {
+                    cursor: pointer;
                     font-size: 0.85rem;
                     line-height: 1.5rem;
                     color: $color-grey-main;
+                    transition: all 0.25s ease-in-out;
+
+                    &:hover {
+                        color: $color-primary;
+                    }
                 }
                 
                 span {
                     margin-right: 0.5rem;
                     font-size: 1rem;
+                    transition: all 0.25s ease-in-out;
+                    color: $color-primary;
                 }
             }
         }
     }
+}
+
+#input-window-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    // width: 100vw;
+    // height: 100vh;
+    z-index: 10;
+    opacity: 1;
+    // pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: all 0.25s ease-in-out;
+
+    .image-input-window {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border-radius: 15px;
+        width: 50vw;
+        height: 60vh;
+    }
+    
+    h1 {
+        position: absolute;
+        top: 25px;
+        left: 30px;
+        font-size: 1.2rem;
+        width: 80%;
+        padding-bottom: 15px;
+        border-bottom: 2px solid $color-grey-bg;
+        color: $color-primary;
+    }
+
+    span {
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        font-size: 2rem;
+        color: $color-grey-bg-border;
+        transition: all 0.25s ease-in-out;
+
+        &:hover {
+            color: $color-grey-borders;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+
+        .btn {
+            position: relative;
+            border: 2px solid $color-grey-bg;
+            border-radius: 50px;
+            padding: 3% 5%;
+            margin: 10vh 0%;
+            transition: all 0.25s ease-in-out;
+
+            &:hover {
+                border: 2px solid $color-primary;
+            }
+
+            input {
+                cursor: pointer;
+                position: absolute;
+                top: 0;
+                left: 0;
+                min-height: 100%;
+                min-width: 100%;
+                border-radius: 50px;
+                opacity: 0;
+            }
+        }
+
+        button {
+            cursor: pointer;
+            position: absolute;
+            bottom: 20px;
+            border: none;
+            outline: none;
+            background: $color-primary;
+            color: white;
+            border-radius: 50px;
+            width: 30%;
+            height: 35px;
+            font-family: inherit;
+            font-size: 1rem;
+            box-shadow: -1px 1px 3px $color-grey-bg-border;
+            transition: all 0.25s ease-in-out;
+
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+    }
+}
+
+#delete-window-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: all 0.25s ease-in-out;
+
+    .delete-window {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border-radius: 15px;
+        width: 50vw;
+        height: 40vh;
+    }
+    
+    h1 {
+        position: absolute;
+        top: 25px;
+        left: 30px;
+        font-size: 1.2rem;
+        width: 80%;
+        padding-bottom: 15px;
+        border-bottom: 2px solid $color-grey-bg;
+        color: $color-primary;
+    }
+
+    span {
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        font-size: 2rem;
+        color: $color-grey-bg-border;
+        transition: all 0.25s ease-in-out;
+
+        &:hover {
+            color: $color-grey-borders;
+        }
+    }
+
+    .user-decision-input {
+        display: flex;
+        justify-content: center;
+        width: 80%;
+        margin-top: 5vh;
+
+        form {
+            display: none;
+        }
+
+        .confirm-delete-user-btn, .cancel-delete-user-btn {
+            background-color: $color-primary;
+            color: white;
+            height: 40px;
+            width: 70%;
+            margin: 0% 2.5%;
+            line-height: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            border-radius: 50px;
+            box-shadow: -1px 1px 3px $color-grey-bg-border;
+            transition: all 0.25s ease-in-out;
+
+            &:hover {
+                transform: scale(1.02);
+            }
+        }
+
+        .cancel-delete-user-btn {
+            background-color: $color-grey-bg;
+            color: $color-primary;
+        }
+    }
+}
+
+.hide {
+    display: none !important;
 }

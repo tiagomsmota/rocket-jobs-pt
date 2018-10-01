@@ -11,7 +11,11 @@
             <div class="job-offer-post">
                 <div class="company">
                     <div class="company-image">
-                        <img src="/imgs/rocket.png" alt="Logo da empresa">
+                        <% if(job.company.image) { %>
+                            <img src="<%= job.company.image %>" alt="Logo da empresa">
+                        <% } else { %>
+                            <img src="/imgs/rocket.png" alt="Logo da empresa">
+                        <% } %>
                     </div>
                     <div class="input-box">
                         <input type="text" name="job[company]" required value="<%= job.company.name %>">

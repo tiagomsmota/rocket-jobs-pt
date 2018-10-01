@@ -16,7 +16,11 @@
                     <% if(!user || user.isCompany === false) { %>
                     <li class="job-card">
                         <div class="job-card-image">
+                        <% if(job.company.image) { %>
+                            <img src="<%= job.company.image %>" alt="Logo da empresa">
+                        <% } else { %>
                             <img src="/imgs/rocket.png" alt="Logo da empresa">
+                        <% } %>
                         </div>
                         <div class="job-card-meta-top">
                             <p><%= job.location %></p>
@@ -40,7 +44,11 @@
                         <% if(job.company.name === user.username) { %>
                         <li class="job-card">
                             <div class="job-card-image">
+                            <% if(job.company.image) { %>
+                                <img src="<%= job.company.image %>" alt="Logo da empresa">
+                            <% } else { %>
                                 <img src="/imgs/rocket.png" alt="Logo da empresa">
+                            <% } %>
                             </div>
                             <div class="job-card-meta-top">
                                 <p><%= job.location %></p>
@@ -77,7 +85,11 @@
                 <% } else { %>
                 <section class="section-user">
                     <div class="user-profile-image">
+                    <% if(user.image.url) { %>
+                        <img src="<%= user.image.url %>" alt="Fotografia do utilizador">
+                    <% } else { %>
                         <img src="/imgs/rocket.png" alt="Fotografia do utilizador">
+                    <% } %>
                     </div>
                     <h1><%= user.username %></h1>
                     <% if(user.isCompany === false) { %>
@@ -85,12 +97,9 @@
                         <p><span><i class="fas fa-suitcase"></i></span> Não tens vagas guardadas</p>
                     </div>
                     <% } %>
-                    <div class="user-options">
-                        <p><span><i class="fas fa-image"></i></span> Alterar fotografia de perfil</p>
-                        <form action="/assets/images" method="POST" enctype="multipart/form-data">
-                            <input type="file" name="image-input">
-                        </form>
-                        <p><span><i class="fas fa-trash"></i></span> Eliminar conta</p>
+                    <div class="user-options slide-down-hidden">
+                        <p id="change-image-btn"><span><i class="fas fa-image"></i></span> Alterar fotografia de perfil</p>
+                        <p id="delete-user-btn"><span><i class="fas fa-trash"></i></span> Eliminar conta</p>
                     </div>
                 </section>
                 <% } %>
@@ -104,6 +113,34 @@
             </aside>
         </div>
     </div>
+    <% if(user) { %>
+    <div id="input-window-background" class="hide">
+        <div class="image-input-window">
+            <h1>Atualiza a tua imagem de perfil</h1>
+            <span id="close-input-window-btn"><i class="fas fa-times"></i></span>
+            <form action="/upload/images?_method=PUT" method="POST" enctype="multipart/form-data">
+                <div class="form-input btn">
+                    <label class="input-filename">Clica aqui para selecionar uma imagem</label>
+                    <input id="user-image-input" type="file" accept="image/*" name="image">
+                </div>
+                <button>Submeter</button>
+            </form>
+        </div>
+    </div>
+    <div id="delete-window-background" class="hide">
+        <div class="delete-window">
+            <h1>Estás seguro de que pretendes eliminar a tua conta?</h1>
+            <span id="close-delete-window-btn"><i class="fas fa-times"></i></span>
+            <div class="user-decision-input">
+                <form id="delete-user-form" action="/user/<%= user._id %>?_method=DELETE" method="POST">
+                    <button>Sim, eliminar</button>
+                </form>
+                <a class="confirm-delete-user-btn">Sim, eliminar</a>
+                <a class="cancel-delete-user-btn">Cancelar</a>
+            </div>
+        </div>
+    </div>
+    <% } %>
 </main>
 
 <% include ../partials/footer %>

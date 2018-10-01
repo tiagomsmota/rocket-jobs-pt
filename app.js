@@ -1,12 +1,13 @@
-const express        = require("express"),
-      app            = express(),
-      bodyParser     = require("body-parser"),
-      methodOverride = require("method-override"),
-      mongoose       = require("mongoose"),
-      passport       = require("passport"),
-      localStrategy  = require("passport-local"),
-      session        = require("express-session"),
-      flash          = require("connect-flash");
+const express           = require("express"),
+      app               = express(),
+      bodyParser        = require("body-parser"),
+      methodOverride    = require("method-override"),
+      mongoose          = require("mongoose"),
+      passport          = require("passport"),
+      localStrategy     = require("passport-local"),
+      session           = require("express-session"),
+      flash             = require("connect-flash");
+      
 
 app.set("view engine", "ejs");
 app.use(express.static("assets"));
@@ -15,14 +16,14 @@ app.use(methodOverride("_method"));
 app.use(flash());
 
 
-//----database setup - mongoose
+//---- database setup - mongoose
 mongoose.connect("mongodb://localhost:27017/rocket-jobs", {useNewUrlParser: true});
 
 var Job = require("./models/job.js");
 var User = require("./models/user.js");
 
 
-//----passport.js setup & config
+//---- passport.js setup & config
 app.use(session({
     secret: "Impulsiona-te com Rocket Jobs",
     resave: false,
@@ -35,7 +36,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
-//----defining locals
+//---- defining locals
 app.use(function(req, res, next) {
     res.locals.user = req.user;
     res.locals.error = req.flash("error");
@@ -44,19 +45,19 @@ app.use(function(req, res, next) {
 });
 
 
-//----routing
+//---- routing
 var jobRoutes = require("./routes/job.js");
-var authRoutes = require("./routes/auth.js");
+var userRoutes = require("./routes/user.js");
 
 app.use(jobRoutes);
-app.use(authRoutes);
+app.use(userRoutes);
 
 app.get("/", function(req, res) {
     res.redirect("/jobs");
 });
 
 
-//----server setup
+//---- server setup
 app.listen(3000, function() {
     console.log("Server is now running on port 3000");
 });

@@ -52,3 +52,48 @@ if(document.querySelector(".flash-close")) {
         }
     });
 };
+
+//handle form to change user image
+if(document.querySelector("#change-image-btn")) {
+    document.querySelector("#change-image-btn").addEventListener("click", function() {
+        var inputWindow = document.querySelector("#input-window-background");
+        inputWindow.style.opacity = 1;
+        inputWindow.classList.toggle("hide");
+    });
+
+    document.querySelector("#close-input-window-btn").addEventListener("click", function() {
+        var inputWindow = document.querySelector("#input-window-background");
+        inputWindow.style.opacity = 0;
+        setTimeout(() => inputWindow.classList.toggle("hide"), 200);
+    });
+
+    document.getElementById("user-image-input").onchange = function() {
+        document.querySelector(".input-filename").innerHTML = this.value.replace("C:\\fakepath\\", " ");
+    };
+};
+
+
+//handle account delete confirmation
+if(document.querySelector("#delete-user-btn")) {
+    document.querySelector("#delete-user-btn").addEventListener("click", function() {
+        var deleteWindow = document.querySelector("#delete-window-background");
+        deleteWindow.style.opacity = 1;
+        deleteWindow.classList.toggle("hide");
+    });
+
+    document.querySelector("#close-delete-window-btn").addEventListener("click", function() {
+        var deleteWindow = document.querySelector("#delete-window-background");
+        deleteWindow.style.opacity = 0;
+        setTimeout(() => deleteWindow.classList.toggle("hide"), 200);
+    });
+
+    document.querySelector(".cancel-delete-user-btn").addEventListener("click", function() {
+        var deleteWindow = document.querySelector("#delete-window-background");
+        deleteWindow.style.opacity = 0;
+        setTimeout(() => deleteWindow.classList.toggle("hide"), 200);
+    });
+
+    document.querySelector(".confirm-delete-user-btn").addEventListener("click", function() {
+        document.querySelector("#delete-user-form").submit();
+    })
+};

@@ -29,7 +29,8 @@ jobController.create = function(req,res) {
     var jobData = { 
         company: { 
             id: req.user._id, 
-            name: req.user.username 
+            name: req.user.username,
+            image: req.user.image.url 
         },
         title: req.body.job.title, 
         location: req.body.job.location, 
@@ -88,7 +89,8 @@ jobController.update = function(req, res) {
     var jobData = { 
         company: { 
             id: req.user._id, 
-            name: req.user.username 
+            name: req.user.username,
+            image: req.user.image.url
         },
         title: req.body.job.title, 
         location: req.body.job.location, 
