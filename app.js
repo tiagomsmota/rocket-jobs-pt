@@ -1,6 +1,6 @@
 const express           = require("express"),
       app               = express(),
-      PORT              = process.env.PORT || 3000,
+    //   PORT              = process.env.PORT || 3000,
       bodyParser        = require("body-parser"),
       methodOverride    = require("method-override"),
       mongoose          = require("mongoose"),
@@ -18,8 +18,8 @@ app.use(flash());
 
 
 //---- database setup - mongoose
-// mongoose.connect("mongodb://localhost:27017/rocket-jobs", {useNewUrlParser: true});
-mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
+mongoose.connect("mongodb://localhost:27017/rocket-jobs", {useNewUrlParser: true});
+// mongoose.connect(process.env.DATABASEURL, {useNewUrlParser: true});
 var Job = require("./models/job.js");
 var User = require("./models/user.js");
 
@@ -59,6 +59,6 @@ app.get("/", function(req, res) {
 
 
 //---- server setup
-app.listen(PORT, function() {
-    console.log(`Server is now running on port ${PORT}`);
+app.listen(3000, function() {
+    console.log(`Server is now running on port 3000`); //${PORT}
 });

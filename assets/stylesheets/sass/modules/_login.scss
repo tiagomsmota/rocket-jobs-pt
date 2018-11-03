@@ -151,3 +151,90 @@
     background-position: center;
     background-size: 100% 130%
 }
+
+@media (max-width: 768px) {
+    .main-left {
+        display: none;
+    }
+
+    #logo {
+        margin: 0;
+    }
+
+    .main {
+
+        h1 {
+            font-size: 1.3rem;
+            line-height: 1.8rem;
+        }
+    
+        h2 {
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+    }
+
+    .main-right {
+    
+        .login-form {
+            margin-top: 10vh;
+    
+            button {
+                margin-top: 3vh;
+                padding: 10.5px 0%;
+                width: 25%;
+                font-size: 0.9rem;
+            }
+    
+            .input-box {
+                margin-top: 2vh;
+                height: 35px;
+                width: 80vw;
+                max-width: 270px;
+    
+                label {
+                    font-size: 0.85rem;
+                }
+    
+                input {
+                    font-size: 0.85rem;
+                }
+            }
+        }
+
+        .register-form {
+            margin-top: 5vh;
+            width: 80vw;
+            max-width: 350px;
+    
+            div {
+                margin: 5% 0% 0% 2.5%;
+                padding: 12.5px 1.5%;
+                width: 50%;
+                display: inline-block;
+                background-color: $color-grey-bg;
+                text-align: center;
+                color: $color-primary;
+                box-shadow: -1px 1px 3px $color-grey-bg-border;
+                transition: all 0.15s ease-in-out;
+    
+                a {
+                    width: 100%;
+                    text-decoration: none;
+                    text-align: center;
+                    font-family: inherit;
+                    font-size: 0.85rem;
+                }
+    
+                &:hover {
+                    transform: scale(1.02);
+                }
+    
+                &:nth-of-type(2n) {
+                    background-color: $color-primary;
+                    color: white;
+                }
+            }
+        }
+    }    
+}

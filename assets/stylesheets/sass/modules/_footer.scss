@@ -124,3 +124,129 @@ footer {
         }
     }
 }
+
+@media (max-width: 768px) {
+    footer {
+        height: auto;
+    
+        #footer-logo {
+            display: none;
+        }
+    
+        .footer-content {
+            flex-direction: column;
+            align-items: center;
+            padding: 5%;
+            height: auto;
+    
+            .footer-about {
+                margin: 10% 5% 5% 5%;
+                max-width: 300px;
+                text-align: center;
+
+                h1 {
+                    font-size: 1.8rem;
+                }
+    
+                p {
+                    font-size: 0.85rem;
+                }
+            }
+    
+            .footer-sitemap {
+                margin: 5%;
+                display: flex;
+
+                .column {
+                    padding: 0.75rem 0;
+
+                    &:nth-of-type(2n) {
+                        padding: 0.75rem 1.5rem;
+                    }
+                }
+                
+
+                div:nth-of-type(2n) {
+                    margin-top: 1rem;
+                }
+    
+                h2 {
+                    font-size: 1rem;
+                }
+    
+                li {
+                    margin: 0.75rem 0%;
+                    font-size: 0.85rem;
+                }
+
+            }
+    
+            .footer-social {
+                margin: 0% 5% 5% 5%;
+                text-align: center;
+
+                h2 {
+                    color: $color-grey-bg;
+                    font-size: 1rem;
+                    font-weight: 500;
+                    margin-bottom: 0.7rem;
+                }
+    
+                .subscription-form {
+                    height: 30px;
+                    width: 80vw;
+                    max-width: 300px;
+    
+                    input {
+                        width: 60%;
+                        background: transparent;
+                        border: none;
+                        padding-left: 10px;
+                        font-family: inherit;
+                        font-size: 0.7rem;
+                        font-weight: 500;
+                        line-height: 30px;
+    
+                        &::placeholder {
+                            color: black;
+                            font-family: inherit;
+                            font-weight: 500;
+                        }
+                    }
+    
+                    button {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        cursor: pointer;
+                        background-color: $color-grey-main;
+                        border: none;
+                        padding: 0% 10px;
+                        height: 30px;
+                        font-family: inherit;
+                        font-weight: 500;
+                        font-size: 0.7rem;
+                        color: $color-grey-bg;
+                        transition: all 0.15s ease-in-out;
+    
+                        &:hover {
+                            opacity: 0.8;
+                        }
+                    }
+                }
+    
+                li {
+                    display: inline-block;
+                    margin: 0.7rem 15px 0% 0%;
+                    list-style: none;
+                    font-size: 1.5rem;
+                    color: $color-grey-bg;
+    
+                    a:hover {
+                        color: $color-grey-main;
+                    }
+                }
+            }
+        }
+    }
+}

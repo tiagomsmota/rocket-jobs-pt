@@ -8,6 +8,14 @@ nav {
     img {
         width: 246px;
     }
+    
+    .mobile-menu {
+        display: none;
+    }
+    .menu-close-icon {
+        display: none;
+    }
+
     div {
         margin-top: 4vh;
         width: 50%;
@@ -209,4 +217,236 @@ nav {
 .checked {
     color: $color-primary;
     font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 5vh 10%;
+    
+        img {
+            width: 123px;
+        }
+        div:not(.mobile-menu) {
+            // display: none;
+            position: fixed;
+            top: -4vh;
+            left: 0;
+            width: 100vw;
+            height: 5vh;
+            z-index: 100;
+            text-align: right;
+            // padding: 6vh 25vw 5vh 0vw;
+            box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+            background-color: $color-primary;
+            transition: all 0.15s ease-in-out;
+            max-height: 0vh;
+            overflow-y: hidden;            
+
+            .menu-close-icon {
+                cursor: pointer;
+                display: inline-block;
+                position: absolute;
+                left: 5vw;
+                font-size: 1.2rem;
+                color: white;
+            }
+
+            a {
+                color: white;
+                font-size: 0.9rem;
+                transition: all 0.15s ease-in-out;
+                
+                &:first-of-type:hover {
+                    color: white;
+                    opacity: 1;
+                }
+                &:nth-of-type(2n) {
+                    padding: 0.4em 0.9em;
+                    background-color: white;
+                    color: $color-primary;
+                    margin-right: 5vw;
+
+                    &:hover {
+
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .mobile-menu {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 20px;
+            height: 20px;
+
+            .menu-icon {
+                color: $color-primary;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    #search-menu {
+        margin: 10vh 5%;  
+        position: relative;
+    
+        #filter-toggle {
+            cursor: pointer;
+            display: inline-block;
+            color: $color-primary;
+            text-align: right;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin: 1% 1% 0% 10%;
+            width: auto;
+            transition: all 0.15s ease-in-out;
+    
+            &:hover {
+                opacity: 0.7;
+            }
+        }
+    
+        form {
+            position: relative;
+    
+            button {
+                cursor: pointer;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                color: $color-primary;
+                position: absolute;
+                top: 100%;
+                right: 8%;
+                transition: all 0.15s ease-in-out;
+    
+                &:hover {
+                    // opacity: 0.7;
+                    transform: scale(1.05);
+                }
+            }
+        }
+    
+        .search-menu-filters-main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .search-menu-filters-extra {
+
+            .input-filters {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 3vh;
+    
+                .input-box:first-of-type {
+                    width: 30%;
+                }
+    
+                .input-box:nth-of-type(2n) {
+                    width: 15.5%;
+    
+                    input {
+                        width: 80%;
+                    }
+                }
+            }
+            
+            .benefits-filters {
+                margin: 2% 10%;
+    
+                p {
+                    padding-left: 2%;
+                    color: $color-grey-main;
+                    font-size: 0.85rem;
+                    font-weight: 500;
+                    letter-spacing: 0.5px;
+    
+                    span {
+                        margin-right: 10px; 
+                        color: $color-primary;
+                        font-size: 1rem;
+                    }
+                }
+    
+                hr {
+                    color: $color-grey-borders;
+                    border-bottom: 0.1px solid white;
+                    opacity: 0.8;
+                    margin: 1vh 0%;
+                }
+    
+                input[type=checkbox] {
+                    display: none;
+                }
+    
+                .columns {
+                    margin: 0% 2%;
+                    
+                    .column {
+                        padding: 0;
+                    }
+    
+                    li {
+                        list-style: none;
+                        margin: 7% 0%;
+                        font-size: 0.75rem;
+                        letter-spacing: 0.3px;
+                        
+                        &:hover > label {
+                            color: $color-primary;
+                        }
+                    }
+    
+                    label {
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    
+        .input-box {
+            margin: 1vh 0%;
+            border: 1px solid $color-grey-bg-border;
+            padding: 0% 0% 0% 2%;
+            min-width: 80%;
+            max-width: 90%;
+            height: 7vh;
+            min-height: 29px;
+            color: $color-primary;
+    
+            input {
+                margin-left: 10px;
+                border: none;
+                height: 100%;
+                width: 80%;
+                background: none;
+                font-size: 0.75rem;
+                font-weight: 500;
+                font-family: inherit;
+                letter-spacing: 0.5px;
+                color: $color-grey-main;
+    
+                &::placeholder {
+                    margin-left: 20px;
+                    font-family: inherit;
+                    font-weight: 500;
+                    font-size: 0.75rem;
+                    color:$color-grey-main;
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
 }

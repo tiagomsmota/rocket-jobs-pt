@@ -1057,6 +1057,10 @@ nav {
   margin: 5vh 10%; }
   nav img {
     width: 246px; }
+  nav .mobile-menu {
+    display: none; }
+  nav .menu-close-icon {
+    display: none; }
   nav div {
     margin-top: 4vh;
     width: 50%;
@@ -1195,6 +1199,165 @@ nav {
   color: #ff5050;
   font-weight: 500; }
 
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 5vh 10%; }
+    nav img {
+      width: 123px; }
+    nav div:not(.mobile-menu) {
+      position: fixed;
+      top: -4vh;
+      left: 0;
+      width: 100vw;
+      height: 5vh;
+      z-index: 100;
+      text-align: right;
+      box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+      background-color: #ff5050;
+      transition: all 0.15s ease-in-out;
+      max-height: 0vh;
+      overflow-y: hidden; }
+      nav div:not(.mobile-menu) .menu-close-icon {
+        cursor: pointer;
+        display: inline-block;
+        position: absolute;
+        left: 5vw;
+        font-size: 1.2rem;
+        color: white; }
+      nav div:not(.mobile-menu) a {
+        color: white;
+        font-size: 0.9rem;
+        transition: all 0.15s ease-in-out; }
+        nav div:not(.mobile-menu) a:first-of-type:hover {
+          color: white;
+          opacity: 1; }
+        nav div:not(.mobile-menu) a:nth-of-type(2n) {
+          padding: 0.4em 0.9em;
+          background-color: white;
+          color: #ff5050;
+          margin-right: 5vw; }
+          nav div:not(.mobile-menu) a:nth-of-type(2n):hover {
+            opacity: 1; }
+    nav .mobile-menu {
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 20px;
+      height: 20px; }
+      nav .mobile-menu .menu-icon {
+        color: #ff5050;
+        font-size: 1rem; }
+  #search-menu {
+    margin: 10vh 5%;
+    position: relative; }
+    #search-menu #filter-toggle {
+      cursor: pointer;
+      display: inline-block;
+      color: #ff5050;
+      text-align: right;
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin: 1% 1% 0% 10%;
+      width: auto;
+      transition: all 0.15s ease-in-out; }
+      #search-menu #filter-toggle:hover {
+        opacity: 0.7; }
+    #search-menu form {
+      position: relative; }
+      #search-menu form button {
+        cursor: pointer;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: #ff5050;
+        position: absolute;
+        top: 100%;
+        right: 8%;
+        transition: all 0.15s ease-in-out; }
+        #search-menu form button:hover {
+          transform: scale(1.05); }
+    #search-menu .search-menu-filters-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+    #search-menu .search-menu-filters-extra .input-filters {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 3vh; }
+      #search-menu .search-menu-filters-extra .input-filters .input-box:first-of-type {
+        width: 30%; }
+      #search-menu .search-menu-filters-extra .input-filters .input-box:nth-of-type(2n) {
+        width: 15.5%; }
+        #search-menu .search-menu-filters-extra .input-filters .input-box:nth-of-type(2n) input {
+          width: 80%; }
+    #search-menu .search-menu-filters-extra .benefits-filters {
+      margin: 2% 10%; }
+      #search-menu .search-menu-filters-extra .benefits-filters p {
+        padding-left: 2%;
+        color: #4f4f4f;
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.5px; }
+        #search-menu .search-menu-filters-extra .benefits-filters p span {
+          margin-right: 10px;
+          color: #ff5050;
+          font-size: 1rem; }
+      #search-menu .search-menu-filters-extra .benefits-filters hr {
+        color: #9d9d9d;
+        border-bottom: 0.1px solid white;
+        opacity: 0.8;
+        margin: 1vh 0%; }
+      #search-menu .search-menu-filters-extra .benefits-filters input[type=checkbox] {
+        display: none; }
+      #search-menu .search-menu-filters-extra .benefits-filters .columns {
+        margin: 0% 2%; }
+        #search-menu .search-menu-filters-extra .benefits-filters .columns .column {
+          padding: 0; }
+        #search-menu .search-menu-filters-extra .benefits-filters .columns li {
+          list-style: none;
+          margin: 7% 0%;
+          font-size: 0.75rem;
+          letter-spacing: 0.3px; }
+          #search-menu .search-menu-filters-extra .benefits-filters .columns li:hover > label {
+            color: #ff5050; }
+        #search-menu .search-menu-filters-extra .benefits-filters .columns label {
+          cursor: pointer; }
+    #search-menu .input-box {
+      margin: 1vh 0%;
+      border: 1px solid #e1e1e1;
+      padding: 0% 0% 0% 2%;
+      min-width: 80%;
+      max-width: 90%;
+      height: 7vh;
+      min-height: 29px;
+      color: #ff5050; }
+      #search-menu .input-box input {
+        margin-left: 10px;
+        border: none;
+        height: 100%;
+        width: 80%;
+        background: none;
+        font-size: 0.75rem;
+        font-weight: 500;
+        font-family: inherit;
+        letter-spacing: 0.5px;
+        color: #4f4f4f; }
+        #search-menu .input-box input::placeholder {
+          margin-left: 20px;
+          font-family: inherit;
+          font-weight: 500;
+          font-size: 0.75rem;
+          color: #4f4f4f;
+          opacity: 0.8; } }
+
 footer {
   position: relative;
   background-color: #ff5050;
@@ -1281,6 +1444,88 @@ footer {
       color: #f7f7f7; }
       footer .footer-content .footer-social li a:hover {
         color: #4f4f4f; }
+
+@media (max-width: 768px) {
+  footer {
+    height: auto; }
+    footer #footer-logo {
+      display: none; }
+    footer .footer-content {
+      flex-direction: column;
+      align-items: center;
+      padding: 5%;
+      height: auto; }
+      footer .footer-content .footer-about {
+        margin: 10% 5% 5% 5%;
+        max-width: 300px;
+        text-align: center; }
+        footer .footer-content .footer-about h1 {
+          font-size: 1.8rem; }
+        footer .footer-content .footer-about p {
+          font-size: 0.85rem; }
+      footer .footer-content .footer-sitemap {
+        margin: 5%;
+        display: flex; }
+        footer .footer-content .footer-sitemap .column {
+          padding: 0.75rem 0; }
+          footer .footer-content .footer-sitemap .column:nth-of-type(2n) {
+            padding: 0.75rem 1.5rem; }
+        footer .footer-content .footer-sitemap div:nth-of-type(2n) {
+          margin-top: 1rem; }
+        footer .footer-content .footer-sitemap h2 {
+          font-size: 1rem; }
+        footer .footer-content .footer-sitemap li {
+          margin: 0.75rem 0%;
+          font-size: 0.85rem; }
+      footer .footer-content .footer-social {
+        margin: 0% 5% 5% 5%;
+        text-align: center; }
+        footer .footer-content .footer-social h2 {
+          color: #f7f7f7;
+          font-size: 1rem;
+          font-weight: 500;
+          margin-bottom: 0.7rem; }
+        footer .footer-content .footer-social .subscription-form {
+          height: 30px;
+          width: 80vw;
+          max-width: 300px; }
+          footer .footer-content .footer-social .subscription-form input {
+            width: 60%;
+            background: transparent;
+            border: none;
+            padding-left: 10px;
+            font-family: inherit;
+            font-size: 0.7rem;
+            font-weight: 500;
+            line-height: 30px; }
+            footer .footer-content .footer-social .subscription-form input::placeholder {
+              color: black;
+              font-family: inherit;
+              font-weight: 500; }
+          footer .footer-content .footer-social .subscription-form button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            background-color: #4f4f4f;
+            border: none;
+            padding: 0% 10px;
+            height: 30px;
+            font-family: inherit;
+            font-weight: 500;
+            font-size: 0.7rem;
+            color: #f7f7f7;
+            transition: all 0.15s ease-in-out; }
+            footer .footer-content .footer-social .subscription-form button:hover {
+              opacity: 0.8; }
+        footer .footer-content .footer-social li {
+          display: inline-block;
+          margin: 0.7rem 15px 0% 0%;
+          list-style: none;
+          font-size: 1.5rem;
+          color: #f7f7f7; }
+          footer .footer-content .footer-social li a:hover {
+            color: #4f4f4f; } }
 
 main {
   background-color: #f7f7f7;
@@ -1631,6 +1876,175 @@ main > h1 {
 .hide {
   display: none !important; }
 
+@media (max-width: 768px) {
+  main > h1 {
+    font-size: 1rem;
+    margin-top: 3vh; }
+  .columns {
+    margin: 0% 5%; }
+    .columns .job-card {
+      position: relative;
+      background-color: white;
+      margin: 0vh 0% 2vh 0%;
+      padding: 3% 5% 3% 5%;
+      box-shadow: -1px 1px 3px #e1e1e1; }
+      .columns .job-card .job-card-image {
+        display: none; }
+      .columns .job-card .job-card-meta-top {
+        font-size: 0.65rem; }
+      .columns .job-card h2 {
+        margin: 2vh 0%;
+        font-size: 1rem; }
+      .columns .job-card .job-card-meta-bottom {
+        flex-direction: column; }
+        .columns .job-card .job-card-meta-bottom div:first-of-type {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          width: max-content;
+          white-space: nowrap; }
+          .columns .job-card .job-card-meta-bottom div:first-of-type p:first-of-type {
+            margin-right: 7px;
+            line-height: 0.8rem;
+            font-size: 0.65rem;
+            font-weight: 500;
+            transition: all 0.15s ease-in-out; }
+            .columns .job-card .job-card-meta-bottom div:first-of-type p:first-of-type:hover {
+              opacity: 0.7; }
+          .columns .job-card .job-card-meta-bottom div:first-of-type .divider {
+            font-size: 0.3rem;
+            color: #e1e1e1;
+            line-height: 0.8rem; }
+          .columns .job-card .job-card-meta-bottom div:first-of-type p:nth-of-type(2n) {
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            line-height: 0.8rem;
+            margin-left: 7px; }
+        .columns .job-card .job-card-meta-bottom ul {
+          display: none; }
+    .columns section {
+      max-width: 280px;
+      margin: auto; }
+      .columns section.section-auth {
+        margin-bottom: 3vh;
+        padding: 5%; }
+        .columns section.section-auth h1 {
+          font-size: 1rem; }
+        .columns section.section-auth p {
+          margin: 7% 0%;
+          font-size: 0.8rem;
+          line-height: 1rem; }
+        .columns section.section-auth a:first-of-type {
+          display: block;
+          margin: 5%;
+          padding: 5% 0%;
+          background-color: #f7f7f7;
+          color: #ff5050;
+          text-decoration: none;
+          text-align: center;
+          font-size: 0.8rem; }
+          .columns section.section-auth a:first-of-type:hover {
+            transform: scale(1.01); }
+        .columns section.section-auth a:nth-of-type(2n) {
+          display: block;
+          padding: 5% 0%;
+          margin: 5%;
+          background-color: #ff5050;
+          color: white;
+          text-decoration: none;
+          text-align: center;
+          font-size: 0.8rem; }
+          .columns section.section-auth a:nth-of-type(2n):hover {
+            transform: scale(1.02); }
+      .columns section.section-advert {
+        padding: 5%;
+        margin-bottom: 3vh; }
+        .columns section.section-advert:hover {
+          transform: scale(1.01); }
+        .columns section.section-advert h1 {
+          margin-bottom: 3%;
+          font-size: 0.9rem;
+          color: #ff5050; }
+        .columns section.section-advert p {
+          font-size: 0.7rem;
+          letter-spacing: 0.3px;
+          line-height: 0.85rem; }
+      .columns section.section-user {
+        margin-bottom: 3vh;
+        padding: 0% 5% 5% 5%; }
+        .columns section.section-user h1 {
+          margin-top: 18vh;
+          font-size: 1rem; }
+        .columns section.section-user .user-profile-image {
+          position: absolute;
+          top: -3vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          margin: 0%;
+          border: 1px solid #e1e1e1;
+          border-radius: 50%;
+          width: 80px;
+          height: 80px;
+          background-color: white; }
+          .columns section.section-user .user-profile-image img {
+            max-height: 75px;
+            max-width: 75px; }
+        .columns section.section-user .user-options {
+          margin-top: 2vh; }
+          .columns section.section-user .user-options p {
+            cursor: pointer;
+            font-size: 0.8rem;
+            line-height: 1.5rem;
+            color: #4f4f4f;
+            transition: all 0.25s ease-in-out; }
+            .columns section.section-user .user-options p:hover {
+              color: #ff5050; }
+          .columns section.section-user .user-options span {
+            margin-right: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.25s ease-in-out;
+            color: #ff5050; }
+  #input-window-background .image-input-window {
+    width: 90vw;
+    max-width: 400px;
+    height: 60vh; }
+  #input-window-background h1 {
+    font-size: 1rem;
+    width: 75%;
+    padding-bottom: 10px; }
+  #input-window-background span {
+    top: 3vh;
+    right: 5%;
+    font-size: 1.7rem; }
+  #input-window-background form {
+    width: 80%; }
+    #input-window-background form .btn {
+      margin: 10vh 0%;
+      font-size: 0.85rem; }
+    #input-window-background form button {
+      width: 50%;
+      max-width: 300px; }
+  #delete-window-background .delete-window {
+    width: 95vw;
+    max-width: 400px;
+    height: 40vh; }
+  #delete-window-background h1 {
+    font-size: 1rem;
+    width: 75%;
+    padding-bottom: 10px;
+    line-height: 1.3rem; }
+  #delete-window-background span {
+    top: 20px;
+    right: 25px;
+    font-size: 1.7rem; }
+  #delete-window-background .user-decision-input {
+    width: 90%;
+    margin-top: 20vh; }
+    #delete-window-background .user-decision-input .confirm-delete-user-btn, #delete-window-background .user-decision-input .cancel-delete-user-btn {
+      font-size: 0.85rem; } }
+
 main > p {
   position: relative;
   top: -2vh;
@@ -1809,6 +2223,66 @@ main > p {
 .job-advice > a {
   margin-bottom: 0% !important; }
 
+@media (max-width: 768px) {
+  .job-page {
+    margin: 4% 0% 0% 0%;
+    padding-bottom: 6vh; }
+    .job-page .job-page-image {
+      position: absolute;
+      left: -5%;
+      top: 10vh;
+      width: 70px;
+      height: 70px; }
+      .job-page .job-page-image img {
+        max-height: 70px;
+        max-width: 70px; }
+    .job-page .job-page-meta-top {
+      font-size: 0.75rem; }
+    .job-page h1 {
+      margin: 6vh 0% 3vh 20%;
+      font-size: 1.2rem; }
+    .job-page .job-page-meta-bottom {
+      margin: 0% 0% 7% 20%; }
+      .job-page .job-page-meta-bottom div:first-of-type p:first-of-type {
+        margin-right: 7px;
+        font-size: 0.85rem;
+        line-height: 1.15rem; }
+      .job-page .job-page-meta-bottom div:first-of-type .divider {
+        font-size: 0.4rem;
+        line-height: 1.15rem; }
+      .job-page .job-page-meta-bottom div:first-of-type p:nth-of-type(2n) {
+        font-size: 0.65rem;
+        line-height: 1.25rem;
+        margin-left: 7px; }
+    .job-page .column {
+      padding: 0% 2.5%; }
+    .job-page h2 {
+      margin-top: 6vh;
+      font-size: 1rem; }
+      .job-page h2 span {
+        margin-right: 10px;
+        font-size: 1rem; }
+    .job-page .job-page-skills, .job-page .job-page-description, .job-page .job-page-benefits {
+      font-size: 0.75rem;
+      line-height: 1.15rem; }
+    .job-page .job-page-skills li {
+      font-weight: 500;
+      margin: 3% 0%; }
+      .job-page .job-page-skills li span {
+        color: #ff5050; }
+    .job-page .job-page-description p {
+      margin: 0% 0% 1vh 0%; }
+    .job-page .job-page-benefits li {
+      font-weight: 500;
+      margin: 5% 0%; }
+  .section-apply {
+    height: 13vh;
+    margin-bottom: 6vh; }
+    .section-apply a {
+      font-size: 1.6rem; }
+  .job-columns {
+    margin-top: 0%; } }
+
 .job-post-form-title {
   text-align: center; }
 
@@ -1940,6 +2414,115 @@ form {
         form .wrapper .job-description .columns label, form .wrapper .job-form-filters .columns label {
           cursor: pointer; }
 
+@media (max-width: 768px) {
+  .job-post-form-title {
+    margin-top: 4vh; }
+  form .submit-job-form-btn {
+    width: 50vw;
+    max-width: 280px;
+    font-size: 1.5rem;
+    margin-bottom: 5vh; }
+  form .wrapper {
+    margin: 4vh 10vw; }
+    form .wrapper .job-offer-post {
+      margin: 0% 10%; }
+    form .wrapper textarea {
+      box-sizing: border-box;
+      white-space: pre-wrap;
+      width: 100%;
+      height: 150px;
+      margin: 1% 0% 2% 0%;
+      padding: 2%;
+      border: none;
+      border: 3px solid #f7f7f7;
+      font-family: inherit;
+      font-size: 0.85rem;
+      color: inherit; }
+    form .wrapper .horizontal-input {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; }
+      form .wrapper .horizontal-input .input-box:first-of-type {
+        width: auto; }
+      form .wrapper .horizontal-input .input-box:nth-of-type(2n) {
+        width: auto; }
+    form .wrapper .input-box {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      margin: 2% 0%;
+      border-bottom: 3px solid #f7f7f7;
+      padding: 5px 2.5%;
+      height: 40px; }
+      form .wrapper .input-box label {
+        font-size: 0.85rem; }
+      form .wrapper .input-box input {
+        border: none;
+        height: 70%;
+        width: 100%;
+        align-self: flex-end;
+        background: transparent;
+        outline: none;
+        font-family: inherit;
+        font-weight: normal;
+        font-size: 0.85rem;
+        color: #4f4f4f; }
+        form .wrapper .input-box input:invalid {
+          box-shadow: none; }
+        form .wrapper .input-box input:focus ~ label, form .wrapper .input-box input:not(:focus):valid ~ label {
+          top: 6px;
+          left: 6px;
+          font-size: 0.65rem;
+          font-weight: 500;
+          color: #ff5050; }
+    form .wrapper .company {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 2vh 0px; }
+      form .wrapper .company .company-image {
+        width: 65px;
+        height: 65px;
+        margin-bottom: 1vh; }
+        form .wrapper .company .company-image img {
+          max-height: 55px;
+          max-width: 55px; }
+      form .wrapper .company .input-box {
+        align-self: flex-start;
+        margin: 0;
+        width: 95%; }
+    form .wrapper .job-form-filters .benefit > label {
+      font-size: 0.85rem; }
+    form .wrapper .job-form-filters > .columns {
+      margin: 0%; }
+    form .wrapper .job-description, form .wrapper .job-form-filters {
+      margin-top: 4vh; }
+      form .wrapper .job-description p, form .wrapper .job-form-filters p {
+        color: #ff5050;
+        font-size: 0.85rem;
+        font-weight: 500;
+        margin: 3% 0% 0% 1vw; }
+      form .wrapper .job-description hr, form .wrapper .job-form-filters hr {
+        border: none;
+        border-bottom: 3px solid #f7f7f7;
+        opacity: 0.8;
+        margin: 1% 0%; }
+      form .wrapper .job-description input[type=checkbox], form .wrapper .job-form-filters input[type=checkbox] {
+        display: none; }
+      form .wrapper .job-description .columns, form .wrapper .job-form-filters .columns {
+        margin: 0% 2%; }
+        form .wrapper .job-description .columns .column, form .wrapper .job-form-filters .columns .column {
+          padding: 0; }
+        form .wrapper .job-description .columns li, form .wrapper .job-form-filters .columns li {
+          list-style: none;
+          margin: 10% 0%;
+          letter-spacing: 0.3px; }
+          form .wrapper .job-description .columns li:hover > label, form .wrapper .job-form-filters .columns li:hover > label {
+            color: #ff5050; }
+        form .wrapper .job-description .columns label, form .wrapper .job-form-filters .columns label {
+          cursor: pointer;
+          font-size: 0.8rem; } }
+
 .main {
   min-height: 100vh;
   margin: 0% 0%; }
@@ -2053,6 +2636,59 @@ form {
   background-position: center;
   background-size: 100% 130%; }
 
+@media (max-width: 768px) {
+  .main-left {
+    display: none; }
+  #logo {
+    margin: 0; }
+  .main h1 {
+    font-size: 1.3rem;
+    line-height: 1.8rem; }
+  .main h2 {
+    font-size: 1rem;
+    line-height: 1.5rem; }
+  .main-right .login-form {
+    margin-top: 10vh; }
+    .main-right .login-form button {
+      margin-top: 3vh;
+      padding: 10.5px 0%;
+      width: 25%;
+      font-size: 0.9rem; }
+    .main-right .login-form .input-box {
+      margin-top: 2vh;
+      height: 35px;
+      width: 80vw;
+      max-width: 270px; }
+      .main-right .login-form .input-box label {
+        font-size: 0.85rem; }
+      .main-right .login-form .input-box input {
+        font-size: 0.85rem; }
+  .main-right .register-form {
+    margin-top: 5vh;
+    width: 80vw;
+    max-width: 350px; }
+    .main-right .register-form div {
+      margin: 5% 0% 0% 2.5%;
+      padding: 12.5px 1.5%;
+      width: 50%;
+      display: inline-block;
+      background-color: #f7f7f7;
+      text-align: center;
+      color: #ff5050;
+      box-shadow: -1px 1px 3px #e1e1e1;
+      transition: all 0.15s ease-in-out; }
+      .main-right .register-form div a {
+        width: 100%;
+        text-decoration: none;
+        text-align: center;
+        font-family: inherit;
+        font-size: 0.85rem; }
+      .main-right .register-form div:hover {
+        transform: scale(1.02); }
+      .main-right .register-form div:nth-of-type(2n) {
+        background-color: #ff5050;
+        color: white; } }
+
 .main-body-reg {
   display: flex;
   align-content: center;
@@ -2152,3 +2788,28 @@ form {
     font-size: 0.85rem; }
     .register-page-form .input-terms input:hover {
       border-color: yellow; }
+    .register-page-form .input-terms .terms-link {
+      color: #ff5050; }
+
+@media (max-width: 768px) {
+  .register-page-form h1 {
+    margin-top: 7vh;
+    font-size: 1.3rem;
+    line-height: 1.8rem; }
+  .register-page-form h2 {
+    font-size: 1rem;
+    line-height: 1.5rem; }
+  .register-page-form .input-terms {
+    line-height: 1.2rem; }
+  .register-page-form form {
+    margin-top: 7%; }
+    .register-page-form form button {
+      cursor: pointer;
+      align-self: center;
+      margin-top: 10%;
+      border: none;
+      padding: 10.5px 0%;
+      width: 35vw;
+      max-width: 150px; }
+      .register-page-form form button:hover {
+        transform: scale(1.02); } }

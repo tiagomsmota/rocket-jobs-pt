@@ -249,3 +249,106 @@ main > p {
 .job-advice > a {
     margin-bottom: 0% !important;
 }
+
+
+@media (max-width: 768px) {
+    .job-page {
+        margin: 4% 0% 0% 0%;
+        padding-bottom: 6vh;
+
+        .job-page-image {
+            position: absolute;
+            left: -5%;
+            top: 10vh;
+            width: 70px;
+            height: 70px;
+    
+            img {
+                max-height: 70px;
+                max-width: 70px;
+            }
+        }
+    
+        .job-page-meta-top {
+            font-size: 0.75rem;
+        }
+    
+        h1 {
+            margin: 6vh 0% 3vh 20%;
+            font-size: 1.2rem;
+        }
+    
+        .job-page-meta-bottom {
+            margin: 0% 0% 7% 20%;
+    
+            div:first-of-type {
+                p:first-of-type {
+                    margin-right: 7px;
+                    font-size: 0.85rem;
+                    line-height: 1.15rem;
+                }
+    
+                .divider {
+                    font-size: 0.4rem;
+                    line-height: 1.15rem;
+                }
+    
+                p:nth-of-type(2n) {
+                    font-size: 0.65rem;
+                    line-height: 1.25rem;
+                    margin-left: 7px;
+                }
+            }
+        }
+    
+        .column {
+            padding: 0% 2.5%;
+        }
+    
+        h2 {
+            margin-top: 6vh;
+            font-size: 1rem;
+    
+            span {
+                margin-right: 10px;
+                font-size: 1rem;
+            }
+        }
+    
+        .job-page-skills, .job-page-description, .job-page-benefits {
+            font-size: 0.75rem;
+            line-height: 1.15rem;
+        }
+    
+        .job-page-skills li {
+            font-weight: 500;
+            margin: 3% 0%;
+    
+            span {
+                color: $color-primary;
+            }
+        }
+    
+        .job-page-description p {
+            margin: 0% 0% 1vh 0%;
+        }
+    
+        .job-page-benefits li {
+            font-weight: 500;
+            margin: 5% 0%;
+        }
+    }    
+
+    .section-apply {
+        height: 13vh;
+        margin-bottom: 6vh;
+    
+        a {
+            font-size: 1.6rem;
+        }  
+    }
+
+    .job-columns {
+        margin-top: 0%;
+    }
+}

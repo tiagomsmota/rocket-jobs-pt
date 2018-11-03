@@ -95,5 +95,22 @@ if(document.querySelector("#delete-user-btn")) {
 
     document.querySelector(".confirm-delete-user-btn").addEventListener("click", function() {
         document.querySelector("#delete-user-form").submit();
-    })
+    });
 };
+
+//open and close menu by clicking on hamburguer - mobile
+if(document.querySelector(".mobile-menu")) {
+    var menu = document.querySelector("div:not(.mobile-menu)");
+    document.querySelector(".mobile-menu").addEventListener("click", function() {
+        // menu.style.display = "block";
+        menu.style.maxHeight = "100vh";
+        menu.style.padding ="6vh 25vw 5vh 0vw";
+    });
+
+    document.querySelector(".menu-close-icon").addEventListener("click", function() {
+        // menu.style.display = "none";
+        menu.style.maxHeight = "0";
+        menu.style.padding ="0";
+    });
+};
+
