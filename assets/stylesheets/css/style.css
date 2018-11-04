@@ -1206,7 +1206,8 @@ nav {
     flex-wrap: wrap;
     margin: 5vh 10%; }
     nav img {
-      width: 123px; }
+      width: 50vw;
+      max-width: 200px; }
     nav div:not(.mobile-menu) {
       position: fixed;
       top: -4vh;

@@ -227,8 +227,10 @@ nav {
         margin: 5vh 10%;
     
         img {
-            width: 123px;
-        }
+            // width: 123px;
+            width: 50vw;
+            max-width: 200px;
+        }   
         div:not(.mobile-menu) {
             // display: none;
             position: fixed;
